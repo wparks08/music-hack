@@ -3,6 +3,7 @@ const ROOT_URL = "https://app.ticketmaster.com/discovery/v2/";
 const EVENT_SEARCH = "events.json?";
 
 /**
+ * Search using the parameters defined in @options
  * @param {Object} options 
  */
 function search(options) {
@@ -21,4 +22,26 @@ function search(options) {
     }, function(error) {
         console.log(error);
     });
+}
+
+/**
+ * Search for music event by a keyword
+ * @param {string} keyword 
+ */
+function searchByKeyword(keyword) {
+    search({
+        keyword: keyword,
+        classificationName: "music"
+    });
+}
+
+/**
+ * Search for a music event by city
+ * @param {string} city 
+ */
+function searchByCity(city) {
+    search({
+        city: city,
+        classificationName: "music"
+    })
 }
