@@ -143,8 +143,8 @@
 .card {
   display: flex;
   background-color: #fff;
-  min-width: 100%;
-  min-height: 200px;
+  min-width: 30vw;
+  min-height: 30vh;
   overflow-x: auto;
 }
 .card--content {
