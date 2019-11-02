@@ -16,12 +16,12 @@ function search(options) {
 
     $.ajax({
         url: queryUrl,
-        method: "GET" 
-    }).then(function(result) {
+        method: "GET"
+    }).then(function (result) {
         // return result
         console.log(result);
         displayResult(result);
-    }, function(error) {
+    }, function (error) {
         console.log(error);
     });
 }
@@ -45,11 +45,36 @@ function searchByCity(city) {
     search({
         city: city,
         classificationName: "music"
-    });
+    })
 }
 
+//onclick function to push data information into upcoming events cards
+$(".hack-it").on("click", function (event) {
+    event.preventDefault();
+    $(".card--content").empty();
+    var value = $("#user-input").val().trim();
+    searchByKeyword(value);
+    displayResult();
+})
+
+
+
 function displayResult(result) {
-    let target = $("#upcoming-events");
+    //Update UI from HERE
+    // <section class="card">
+    //    <div class="card--content">
+    //        <div class="card" style="width: 18rem;">
+    //            <img src="..." class="card-img-top" alt="...">
+    //            <div class="card-body">
+    //                <h5 class="card-title">Adele</h5>
+    //                <p class="card-text">Location: <span id="location"></span></p>
+    //                <a href="#" class="btn btn-primary">Details</a>
+    //            </div>
+    //        </div>
+    //    </div>
+    //    <div class="card--content"></div>
+    //</section>
+    let target = $(".card--content");
     result["_embedded"].events.forEach(function (event) {
         var properties = {
             imageUrl: event.images[0].url || "",
