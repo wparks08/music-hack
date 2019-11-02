@@ -20,6 +20,7 @@ function search(options) {
     }).then(function(result) {
         // return result
         console.log(result);
+        displayResult(result);
     }, function(error) {
         console.log(error);
     });
@@ -30,7 +31,7 @@ function search(options) {
  * @param {string} keyword 
  */
 function searchByKeyword(keyword) {
-    return search({
+    search({
         keyword: keyword,
         classificationName: "music"
     });
@@ -41,8 +42,12 @@ function searchByKeyword(keyword) {
  * @param {string} city 
  */
 function searchByCity(city) {
-    return search({
+    search({
         city: city,
         classificationName: "music"
-    })
+    });
+}
+
+function displayResult(result) {
+    //Update UI from HERE
 }
