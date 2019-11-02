@@ -20,6 +20,12 @@ function search(options) {
     }).then(function (result) {
         return result
     }, function (error) {
+        method: "GET"
+    }).then(function (result) {
+        // return result
+        console.log(result);
+        displayResult(result);
+    }, function (error) {
         console.log(error);
     });
 }
@@ -29,7 +35,7 @@ function search(options) {
  * @param {string} keyword 
  */
 function searchByKeyword(keyword) {
-    return search({
+    search({
         keyword: keyword,
         classificationName: "music"
     });
@@ -40,7 +46,7 @@ function searchByKeyword(keyword) {
  * @param {string} city 
  */
 function searchByCity(city) {
-    return search({
+    search({
         city: city,
         classificationName: "music"
     })
@@ -51,3 +57,8 @@ $(".hack-it").on("click", function (event) {
     event.preventDefault();
     console.log(this.val())
 })
+
+
+function displayResult(result) {
+    //Update UI from HERE
+}
