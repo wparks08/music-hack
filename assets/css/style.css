@@ -144,6 +144,20 @@
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
   }
+
+
+.card {
+  display: flex;
+  background-color: #fff;
+  min-width: 100%;
+  min-height: 200px;
+  overflow-x: auto;
+}
+.card--content {
+  background-color: #e74c3c;
+  min-width: 200px;
+  margin: 5px;
+}
   /* .icons {
     background-color: white;
     opacity: 0.3;
