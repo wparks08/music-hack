@@ -9,7 +9,7 @@ const EVENT_SEARCH = "events.json?";
 function search(options) {
     let queryUrl = ROOT_URL + EVENT_SEARCH + "apikey=" + API_KEY;
     let params = Object.entries(options);
-    params.forEach(function(param) {
+    params.forEach(function (param) {
         queryUrl += "&" + param[0] + "=" + param[1];
     });
     console.log(queryUrl);

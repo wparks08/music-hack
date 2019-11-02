@@ -79,12 +79,17 @@
     height: 7rem;
   }
   
-  .features-icons .features-icons-item .features-icons-icon i {
+  .features-icons .features-icons-item .features-icons-icon a {
     font-size: 4.5rem;
   }
   
-  .features-icons .features-icons-item:hover .features-icons-icon i {
+  .features-icons .features-icons-item:hover .features-icons-icon a {
     font-size: 5rem;
+  }
+
+  #icon-calendar, #icon-chart-line, 
+  #icon-merch {
+    align-content: center;
   }
   
   .testimonials {
@@ -104,10 +109,10 @@
   .call-to-action {
     position: relative;
     background-color: #343a40;
-    background: url("../img/bg-masthead.jpg") no-repeat center center;
     background-size: cover;
     padding-top: 7rem;
     padding-bottom: 7rem;
+    opacity: 0.3;
   }
   
   .call-to-action .overlay {
@@ -117,7 +122,6 @@
     width: 100%;
     top: 0;
     left: 0;
-    opacity: 0.3;
   }
   
   footer.footer {
@@ -154,7 +158,7 @@
   overflow-x: auto;
 }
 .card--content {
-  background-color: #e74c3c;
+  background-color: blue;
   min-width: 200px;
   margin: 5px;
 }
