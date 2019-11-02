@@ -18,7 +18,7 @@ function search(options) {
         url: queryUrl,
         method: "GET" 
     }).then(function(result) {
-        console.log(result);
+        return result
     }, function(error) {
         console.log(error);
     });
@@ -29,7 +29,7 @@ function search(options) {
  * @param {string} keyword 
  */
 function searchByKeyword(keyword) {
-    search({
+    return search({
         keyword: keyword,
         classificationName: "music"
     });
@@ -40,7 +40,7 @@ function searchByKeyword(keyword) {
  * @param {string} city 
  */
 function searchByCity(city) {
-    search({
+    return search({
         city: city,
         classificationName: "music"
     })
