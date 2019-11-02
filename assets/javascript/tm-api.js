@@ -18,7 +18,8 @@ function search(options) {
         url: queryUrl,
         method: "GET" 
     }).then(function(result) {
-        return result
+        // return result
+        console.log(result);
     }, function(error) {
         console.log(error);
     });
