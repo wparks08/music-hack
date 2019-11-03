@@ -54,37 +54,15 @@ $(".hack-it").on("click", function (event) {
     $(".card--content").empty();
     var value = $("#user-input").val().trim();
     searchByKeyword(value);
-    displayResult();
 })
 
 
 
 function displayResult(result) {
-    //Update UI from HERE
-    // <section class="card">
-    //    <div class="card--content">
-    //        <div class="card" style="width: 18rem;">
-    //            <img src="..." class="card-img-top" alt="...">
-    //            <div class="card-body">
-    //                <h5 class="card-title">Adele</h5>
-    //                <p class="card-text">Location: <span id="location"></span></p>
-    //                <a href="#" class="btn btn-primary">Details</a>
-    //            </div>
-    //        </div>
-    //    </div>
-    //    <div class="card--content"></div>
-    //</section>
-    let target = $(".card--content");
+    let target = $("#upcoming-events");
     result["_embedded"].events.forEach(function (event) {
-        var properties = {
-            imageUrl: event.images[0].url || "",
-            location: {
-                venue: event["_embedded"].venues[0].name || "(No location set)",
-                city: event["_embedded"].venues[0].city.name || "",
-                state: event["_embedded"].venues[0].state.stateCode || ""
-            },
-            eventUrl: event.url || "#"
-        }
+        var properties = getEventProperties(event);
+
         let sectionCard = $("<section>")
             .addClass("card");
         let container = $("<div>")
@@ -120,7 +98,70 @@ function displayResult(result) {
                 )
             )
         );
-        // container.append(name);
         target.append(sectionCard);
     });
+}
+
+function getEventProperties(event) {
+    let properties = {
+        imageUrl:  getImageUrl(event),
+        location: getLocation(event),
+        eventUrl: getEventUrl(event, this)
+    }
+
+
+    return properties
+}
+
+function getImageUrl(event) {
+    try {
+        return event.images[0].url;
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
+}
+
+function getLocation(event) {
+    return {
+        venue: getVenue(event, this),
+        city: getCity(event, this),
+        state: getState(event, this)
+    };
+}
+
+function getVenue(event) {
+    try {
+        return event["_embedded"].venues[0].name;
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
+}
+
+function getCity(event) {
+    try {
+        return event["_embedded"].venues[0].city.name;
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
+}
+
+function getState(event) {
+    try {
+        return event["_embedded"].venues[0].state.stateCode;
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
+}
+
+function getEventUrl(event) {
+    try {
+        return event.url;
+    } catch (error) {
+        console.debug(error);
+        return "#";
+    }
 }
