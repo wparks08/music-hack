@@ -5,6 +5,7 @@
  */
 
 
+
   header.masthead {
     position: relative;
     background-size: cover;
@@ -140,17 +141,33 @@
   }
 
 
-.card {
+#upcoming-events {
   display: flex;
   background-color: #fff;
   min-width: 30vw;
   min-height: 30vh;
   overflow-x: auto;
+  align-items: center;
+  height: 100vh;
+}
+#upcoming-events:: -webkit-scrollbar {
+  display: none;
 }
 .card--content {
-  background-color: blue;
-  min-width: 200px;
+  background-color: white;
+  width: 30vw;
+  height: 40vh;
   margin: 5px;
+  margin-right: 15px;
+  display: inline-block;
+}
+.card--content img {
+  height: 20vh;
+  width: 30vw;
+}
+.card-body {
+  width: 30vw;
+  height: 30vh;
 }
 
   
