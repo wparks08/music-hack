@@ -54,28 +54,15 @@ $(".hack-it").on("click", function (event) {
     $(".card--content").empty();
     var value = $("#user-input").val().trim();
     searchByKeyword(value);
-    displayResult();
 })
 
 
 
 function displayResult(result) {
-    //Update UI from HERE
-    // <section class="card">
-    //    <div class="card--content">
-    //        <div class="card" style="width: 18rem;">
-    //            <img src="..." class="card-img-top" alt="...">
-    //            <div class="card-body">
-    //                <h5 class="card-title">Adele</h5>
-    //                <p class="card-text">Location: <span id="location"></span></p>
-    //                <a href="#" class="btn btn-primary">Details</a>
-    //            </div>
-    //        </div>
-    //    </div>
-    //    <div class="card--content"></div>
-    //</section>
-    let target = $(".card--content");
+    let target = $("#upcoming-events");
     result["_embedded"].events.forEach(function (event) {
+        var properties = getEventProperties(event);
+
         let sectionCard = $("<section>")
             .addClass("card");
         let container = $("<div>")
@@ -85,16 +72,19 @@ function displayResult(result) {
         let cardBody = $("<div>")
             .addClass("card-body");
         let image = $("<img>")
-            .attr("src", event.images[0].url)
+            .attr("src", properties.imageUrl)
             .attr("width", "100")
             .addClass("card-img-top");
         let name = $("<h5>")
             .html(event.name);
         let location = $("<p>")
             .addClass("card-text")
-            .html(event["_embedded"].venues[0].name);
+            .html(properties.location.venue);
+        let cityState = $("<p>")
+            .addClass("card-text")
+            .html(properties.location.city + ", " + properties.location.state)
         let details = $("<a>")
-            .attr("href", event.url)
+            .attr("href", properties.eventUrl)
             .attr("target", "_blank")
             .addClass("btn btn-primary")
             .html("Details");
@@ -103,12 +93,75 @@ function displayResult(result) {
                 card.append(
                     [image,
                         cardBody.append(
-                            [name, location, details]
+                            [name, location, cityState, details]
                         )]
                 )
             )
         );
-        // container.append(name);
         target.append(sectionCard);
     });
+}
+
+function getEventProperties(event) {
+    let properties = {
+        imageUrl:  getImageUrl(event),
+        location: getLocation(event),
+        eventUrl: getEventUrl(event, this)
+    }
+
+
+    return properties
+}
+
+function getImageUrl(event) {
+    try {
+        return event.images[0].url;
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
+}
+
+function getLocation(event) {
+    return {
+        venue: getVenue(event, this),
+        city: getCity(event, this),
+        state: getState(event, this)
+    };
+}
+
+function getVenue(event) {
+    try {
+        return event["_embedded"].venues[0].name;
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
+}
+
+function getCity(event) {
+    try {
+        return event["_embedded"].venues[0].city.name;
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
+}
+
+function getState(event) {
+    try {
+        return event["_embedded"].venues[0].state.stateCode;
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
+}
+
+function getEventUrl(event) {
+    try {
+        return event.url;
+    } catch (error) {
+        console.debug(error);
+        return "#";
+    }
 }
