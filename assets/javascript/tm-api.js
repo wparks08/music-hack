@@ -63,8 +63,8 @@ function displayResult(result) {
     result["_embedded"].events.forEach(function (event) {
         var properties = getEventProperties(event);
 
-        let sectionCard = $("<section>")
-            .addClass("card");
+        // let sectionCard = $("<section>")
+        //     .addClass("card");
         let container = $("<div>")
             .addClass("card--content");
         let card = $("<div>")
@@ -88,23 +88,24 @@ function displayResult(result) {
             .attr("target", "_blank")
             .addClass("btn btn-primary")
             .html("Details");
-        sectionCard.append(
-            container.append(
-                card.append(
-                    [image,
-                        cardBody.append(
-                            [name, location, cityState, details]
-                        )]
-                )
+        // sectionCard.append(
+        container.append(
+            card.append(
+                [image,
+                    cardBody.append(
+                        [name, location, cityState, details]
+                    )]
             )
         );
-        target.append(sectionCard);
+        // );
+        // target.append(sectionCard);
+        target.append(container);
     });
 }
 
 function getEventProperties(event) {
     let properties = {
-        imageUrl:  getImageUrl(event),
+        imageUrl: getImageUrl(event),
         location: getLocation(event),
         eventUrl: getEventUrl(event, this)
     }
