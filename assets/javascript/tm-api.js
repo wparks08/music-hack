@@ -51,6 +51,7 @@ function searchByCity(city) {
 //onclick function to push data information into upcoming events cards
 $(".hack-it").on("click", function (event) {
     event.preventDefault();
+    // $(".card--content").empty();
     $(".card--content").empty();
     var value = $("#user-input").val().trim();
     searchByKeyword(value);
@@ -67,8 +68,9 @@ function displayResult(result) {
         //     .addClass("card");
         let container = $("<div>")
             .addClass("card--content");
-        let card = $("<div>")
-            .addClass("card");
+        let containerSide = $("<div>")
+            .addClass("card front")
+            .attr("style", "width: 18rem");
         let cardBody = $("<div>")
             .addClass("card-body");
         let image = $("<img>")
@@ -84,22 +86,37 @@ function displayResult(result) {
             .addClass("card-text")
             .html(properties.location.city + ", " + properties.location.state)
         let details = $("<a>")
-            .attr("href", properties.eventUrl)
+            // .attr("href", properties.eventUrl)
             .attr("target", "_blank")
             .addClass("btn btn-primary")
             .html("Details");
         // sectionCard.append(
         container.append(
-            card.append(
-                [image,
-                    cardBody.append(
-                        [name, location, cityState, details]
-                    )]
+            containerSide.append(
+                cardBody.append(
+                    [image, name, location, cityState, details]
+                    // cardBody.append(
+                    //     [name, location, cityState, details]
+                    // )]
+                )
             )
         );
         // );
         // target.append(sectionCard);
         target.append(container);
+
+        let backContainer = $("<div>")
+            .addClass("card back");
+        let backContainerDiv = $("<div>")
+            .addClass("card-body");
+
+        target.append(
+            backContainer.append(
+                backContainerDiv)
+        );
+
+
+
     });
 }
 
