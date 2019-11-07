@@ -8,6 +8,10 @@ const EVENT_SEARCH = "events.json?";
  */
 function search(options) {
     let queryUrl = ROOT_URL + EVENT_SEARCH + "apikey=" + API_KEY;
+
+    options.classificationName = "music";
+    options.sort = "date,asc";
+
     let params = Object.entries(options);
     params.forEach(function (param) {
         queryUrl += "&" + param[0] + "=" + param[1];
@@ -32,8 +36,7 @@ function search(options) {
  */
 function searchByKeyword(keyword) {
     search({
-        keyword: keyword,
-        classificationName: "music"
+        keyword: keyword
     });
 }
 
@@ -43,23 +46,21 @@ function searchByKeyword(keyword) {
  */
 function searchByCity(city) {
     search({
-        city: city,
-        classificationName: "music"
+        city: city
     })
 }
 
 function searchByKeywordAndCity(keyword, city) {
     search({
         keyword: keyword,
-        city: city,
-        classificationName: "music"
+        city: city
     });
 }
 
 //onclick function to push data information into upcoming events cards
 $(".hack-it").on("click", function (event) {
     event.preventDefault();
-    $(".card--content").empty();
+    $("#upcoming-events").empty();
     var value = $("#user-input").val().trim();
     searchByKeyword(value);
 })
@@ -68,6 +69,9 @@ $(".hack-it").on("click", function (event) {
 
 function displayResult(result) {
     let target = $("#upcoming-events");
+    let header = $("<h2>")
+        .html("Upcoming Events");
+    target.append(header);
     result["_embedded"].events.forEach(function (event) {
         var properties = getEventProperties(event);
 
