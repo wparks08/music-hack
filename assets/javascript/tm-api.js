@@ -49,71 +49,71 @@ function searchByCity(city) {
 }
 
 //onclick function to push data information into upcoming events cards
-$(".hack-it").on("click", function (event) {
+$("#hack-it").on("click", function (event) {
     event.preventDefault();
+    console.log("this kind of works")
     // $(".card--content").empty();
-    $(".card--content").empty();
-    var value = $("#user-input").val().trim();
-    searchByKeyword(value);
+    $("#card-row-container").empty();
+    var valueArtist = $("#artistSearch").val().trim();
+    searchByKeyword(valueArtist);
 })
 
 
 
 function displayResult(result) {
-    let target = $("#upcoming-events");
+    let target = $("#card-row-container");
     result["_embedded"].events.forEach(function (event) {
         var properties = getEventProperties(event);
 
         // let sectionCard = $("<section>")
         //     .addClass("card");
         let container = $("<div>")
-            .addClass("card--content");
-        let containerSide = $("<div>")
-            .addClass("card front")
-            .attr("style", "width: 18rem");
-        let cardBody = $("<div>")
-            .addClass("card-body");
+            .addClass("card");
+        let imageDiv = $("<div>")
+            .addClass("card-image");
         let image = $("<img>")
-            .attr("src", properties.imageUrl)
-            .attr("width", "100")
-            .addClass("card-img-top");
-        let name = $("<h5>")
+            .attr("src", properties.imageUrl);
+        let iconLink = $("<a>")
+            .attr("href", "#")
+            .addClass("halfway-fab btn-floating pink pulse");
+        let icon = $("<i>")
+            .addClass("material-icons")
+            .html("favorite");
+        let cardContentDiv = $("<div>")
+            .addClass("card-content")
+        let artistSpan = $("<span>")
+            .addClass("card-title")
             .html(event.name);
-        let location = $("<p>")
-            .addClass("card-text")
+        let locationSpan = $("<span>")
+            .attr("id", "location")
+            .html(properties.location.city + ", " + properties.location.state);
+        let venueSpan = $("<span>")
+            .attr("id", "venue")
             .html(properties.location.venue);
-        let cityState = $("<p>")
-            .addClass("card-text")
-            .html(properties.location.city + ", " + properties.location.state)
-        let details = $("<a>")
-            // .attr("href", properties.eventUrl)
-            .attr("target", "_blank")
-            .addClass("btn btn-primary")
-            .html("Details");
-        // sectionCard.append(
+        let dateSpan = $("<span>")
+            .attr("id", "date")
+        let cardActionDiv = $("<div>")
+            .addClass("card-action")
+        let detailsLink = $("<a>")
+            .attr("href", "#")
+            .html("details");
+        let ticketsLink = $("<a>")
+            .attr("href", "#")
+            .html("Buy Tickets");
+
         container.append(
-            containerSide.append(
-                cardBody.append(
-                    [image, name, location, cityState, details]
-                    // cardBody.append(
-                    //     [name, location, cityState, details]
-                    // )]
-                )
+            imageDiv.append(
+                image, iconLink.append(icon)
+            ),
+            cardContentDiv.append(
+                artistSpan, locationSpan, venueSpan, dateSpan
+            ),
+            cardActionDiv.append(
+                detailsLink, ticketsLink
             )
         );
-        // );
-        // target.append(sectionCard);
+
         target.append(container);
-
-        let backContainer = $("<div>")
-            .addClass("card back");
-        let backContainerDiv = $("<div>")
-            .addClass("card-body");
-
-        target.append(
-            backContainer.append(
-                backContainerDiv)
-        );
 
 
 
