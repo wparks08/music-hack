@@ -4,6 +4,13 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-landing-page/blob/master/LICENSE)
  */
 
+ .bg{
+  background:url(../images/cbg5.jpg) no-repeat;
+  width:100%;
+  height:200vh;
+  background-color: red;
+background-size: 300%;
+}
 
   header.masthead {
     position: relative;
@@ -21,21 +28,21 @@
     left: 0;
     opacity: 0.8;
   }
-  
   header.masthead h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
-  
-  @media (min-width: 768px) {
-    header.masthead {
-      padding-top: 12rem;
-      padding-bottom: 12rem;
-    }
-    header.masthead h1 {
-      font-size: 3rem;
-    }
-  }
-  
+}
+
+.showcase .showcase-text {
+  padding: 3rem;
+}
+
+.showcase .showcase-img {
+  min-height: 30rem;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
   .showcase .showcase-text {
     padding: 3rem;
   }
@@ -118,6 +125,7 @@
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
+}
 
   .bg-light {
     background-color: #f8f9fa!important;

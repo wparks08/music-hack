@@ -1,133 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="stylesheet" type="text/css" href="../project-1/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../project-1/assets/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
-        integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+      integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN"
+      crossorigin="anonymous"
+    />
 
     <title>Music Hack</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-        type="text/css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link
+      href="vendor/simple-line-icons/css/simple-line-icons.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
+    <style>
+     
 
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        height: 500px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+        background-color: rgb(201, 197, 218);
+      }
 
-</head>
+      .title {
+        color: grey;
+        font-size: 18px;
+      }
 
-<body>
+      button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+      }
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
+      a {
+        text-decoration: none;
+        font-size: 22px;
+        color: black;
+      }
+
+      button:hover,
+      a:hover {
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="container-fluid bg">
+      <!-- Navigation -->
+      <nav class="navbar navbar-light bg-light static-top">
         <div class="container">
-            <a class="navbar-brand" href="../index.html"> Home </a>
-            <a class="navbar-brand" href="html-pages/genre.html"> Genre </a>
-            <a class="navbar-brand" href="html-pages/trending.html"> Trending </a>
-            <a class="navbar-brand" href="html-pages/merchandise.html"> Merchandise </a>
-            <a class="navbar-brand" href="html-pages/contact.html">Contact</a>
+          <a class="navbar-brand" href="../index.html"> Home </a>
+          <a class="navbar-brand" href="html-pages/genre.html"> Genre </a>
+          <a class="navbar-brand" href="html-pages/trending.html"> Trending </a>
+          <a class="navbar-brand" href="../html-pages/merchandise.html">
+            Merchandise
+          </a>
+          <a class="navbar-brand" href="html-pages/contact.html">Contact</a>
         </div>
-    </nav>
-    <div class="container">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container" style="text-align: center">
-                <h1 class="display-4"> Have a Question or Comment? </h1>
-                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.
-                </p>
-            </div>
+      </nav>
+
+      <br><br>
+      <!-- Rotating card -->
+      <div class="row">
+        <div class="card col-md-3">
+          <img
+            src="../assets/images/will.png"
+            alt="John"
+            style="width:100%"
+            height="250"
+          />
+          <h1>Will Parks</h1>
+          <p class="title">Web Developer</p>
+          <p>California</p>
+          <div style="margin: 24px 0;">
+            <a href="https://wparks08.github.io/Bootstrap-Portfolio/portfolio.html"target="_blank"><i class="fa fa-dribbble"></i></a>
+            <a href="https://github.com/wparks08/"target="_blank"><i class="fa fa-github"></i></a>
+            
+            
+          </div>
         </div>
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                    else.</small>
+
+        
+
+            <div class="card col-md-3 ">
+              <img
+                src="../assets/images/nivi.jpj.png"
+                alt="John"
+                style="width:100%"
+                height="250"
+              />
+              <h1>Nivi Amanjee</h1>
+              <p class="title">Web Developer</p>
+              <p>California</p>
+              <div style="margin: 24px 0;">
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+                <a href="https://niviamanjee.github.io/Portfolio/"><i class="fa fa-github"></i></a>
+              </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1"> Message </label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+          
+        
+
+        <div class="card col-md-3">
+          <img
+            src="../assets/images/geetha.jpg"
+            alt="John"
+            style="width:100%"
+            height="250"
+          />
+          <h1>Geetha S</h1>
+          <p class="title">Web Developer</p>
+          <p>California</p>
+          <div style="margin: 24px 0;">
+            <a href="https://geetha-21.github.io/bootstrap-portfolio/index.html"><i class="fa fa-dribbble"></i></a>
+            <a href="https://github.com/GEETHA-21"><i class="fa fa-github"></i></a>
+            
+          </div>
+        </div>
+      </div>
     </div>
-
-
-
-    <!-- Footer -->
-    <footer class="footer bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-                    <ul class="list-inline mb-2">
-                        <li class="list-inline-item">
-                            <a href="#">About</a>
-                        </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Contact</a>
-                        </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Privacy Policy</a>
-                        </li>
-                    </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item mr-3">
-                            <a href="#">
-                                <i class="fab fa-facebook fa-2x fa-fw"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item mr-3">
-                            <a href="#">
-                                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-instagram fa-2x fa-fw"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </section>
+  </body>
 </html>
