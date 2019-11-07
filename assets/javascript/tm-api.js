@@ -48,6 +48,14 @@ function searchByCity(city) {
     })
 }
 
+function searchByKeywordAndCity(keyword, city) {
+    search({
+        keyword: keyword,
+        city: city,
+        classificationName: "music"
+    });
+}
+
 //onclick function to push data information into upcoming events cards
 $(".hack-it").on("click", function (event) {
     event.preventDefault();
