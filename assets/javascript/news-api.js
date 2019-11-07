@@ -4,6 +4,10 @@ const NEWS_SEARCH_URL = "https://newsapi.org/v2/everything?";
 function newsSearch(options) {
     let queryUrl = NEWS_SEARCH_URL + "apikey=" + NEWS_API_KEY;
 
+    options.pageSize = 20;
+    options.page = 1;
+    options.sources = "buzzfeed,entertainment-weekly,mashable,mtv-news,mtv-news-uk,the-lad-bible";
+
     let params = Object.entries(options);
     params.forEach(function (param) {
         queryUrl += "&" + param[0] + "=" + param[1];
