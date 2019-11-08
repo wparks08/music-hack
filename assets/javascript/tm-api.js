@@ -30,6 +30,21 @@ function search(options) {
     });
 }
 
+function getEventById(id) {
+    let queryUrl = EVENT_BY_ID_URL + id + "?apikey=" + API_KEY;
+
+    $.ajax({
+        url: queryUrl,
+        method: "GET"
+    }).then(function (result) {
+        console.log(result);
+        let properties = getEventProperties(result);
+        //DO STUFF TO DISPLAY
+    }, function (error) {
+            console.log(error);
+    })
+}
+
 /**
  * Search for music event by a keyword
  * @param {string} keyword 
