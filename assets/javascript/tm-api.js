@@ -137,6 +137,9 @@ function displayResult(result, target) {
             .attr("data-id", event.id);
         let icon = $("<i>")
             .addClass("material-icons")
+            .attr("id", "favorite-icon")
+            .attr("data", "favorite")
+            .attr("data-alt", "favorite_border")
             .html("favorite");
         let cardContentDiv = $("<div>")
             .addClass("card-content")

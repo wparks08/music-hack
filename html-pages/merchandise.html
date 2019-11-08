@@ -3,234 +3,247 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="stylesheet" type="text/css" href="../project-1/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../project-1/assets/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
-        integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" type="text/css" href="../project-1/assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../project-1/assets/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>Music Hack</title>
+  <title>Music Hack</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-        type="text/css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <style>
-          .row {
-            display: flex;
-          }
-          .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            max-width: 300px;
-            margin: 10px 50px;
-            text-align: center;
-            font-family: arial;
-            max-height: 320px;
-          }
-    
-          
-    
-          .price {
-            color: grey;
-            font-size: 22px;
-          }
-    
-          .card button {
-            border: none;
-            outline: 0;
-            padding: 12px;
-            color: white;
-            background-color: #000;
-            text-align: center;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-          }
-    
-          .card button:hover {
-            opacity: 0.7;
-          }
-        </style>
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .row {
+      display: flex;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: 10px 50px;
+      text-align: center;
+      font-family: arial;
+      max-height: 320px;
+    }
+
+
+
+    .price {
+      color: grey;
+      font-size: 22px;
+    }
+
+    .card button {
+      border: none;
+      outline: 0;
+      padding: 12px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    .card button:hover {
+      opacity: 0.7;
+    }
+  </style>
 
 
 </head>
 
 <body>
- <!-- Navigation -->
- <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
-          <a class="navbar-brand" href="../index.html"> Home </a>
-          <a class="navbar-brand" href="html-pages/genre.html"> Genre </a>
-          <a class="navbar-brand" href="html-pages/trending.html"> Trending </a>
-            Merchandise
+  <!-- Navigation -->
+  <div>
+    <nav class="purple navbar-fixed">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo left-align"> Music Hack </a>
+          <a href="#" data-target="slide-out" class="sidenav-trigger">
+            <i class="material-icons"> menu </i>
           </a>
-          <a class="navbar-brand" href="html-pages/contact.html">Contact</a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="../index.html"> Home</a>
+            </li>
+            <li>
+              <a href="../index.html#search"> Search </a>
+            </li>
+            <li>
+              <a href="../index.html#upcoming-events">Upcoming Events </a>
+            </li>
+            <li>
+              <a href="../index.html#trending">Trending </a>
+            </li>
+            <li>
+              <a href="merchandise.html"> Merchandise </a>
+            </li>
+            <li>
+              <a href="favorites.html"> Favorites </a>
+            </li>
+            <li>
+              <a href="contact.html"> Contact </a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+    <ul class="sidenav" id="slide-out">
+      <li>
+        <a href="../index.html"> Home</a>
+      </li>
+      <li>
+        <a href="../index.html#search"> Search </a>
+      </li>
+      <li>
+        <a href="../index.html#upcoming-events">Upcoming Events </a>
+      </li>
+      <li>
+        <a href="../index.html#trending">Trending </a>
+      </li>
+      <li>
+        <a href="merchandise.html"> Merchandise </a>
+      </li>
+      <li>
+        <a href="favorites.html"> Favorites </a>
+      </li>
+      <li>
+        <a href="contact.html"> Contact </a>
+      </li>
+    </ul>
+  </div>
 
-        <div class="row">
-                <div class="card col-md-2">
-                  <img
-                    src="../assets/images/t4.jpg"
-                    alt="Denim Jeans"
-                    style="width:100%"
-                  />
-          
-                  <p class="price">$15.99</p>
-                  <p>may be old</p>
-                  <a
-                    href="https://www.etsy.com/listing/683807181/i-may-be-old-but-i-got-to-see-all-the?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=womens+music+shirts&ref=sr_gallery-1-17&organic_search_click=1&frs=1&col=1"
-                    >Etsy</a
-                  >
-                </div>
-          
-                <div class="card col-md-2">
-                  <img
-                    src="../assets/images/t2.jpg"
-                    alt="Denim Jeans"
-                    style="width:100%"
-                  />
-          
-                  <p class="price">$24.95</p>
-                  <p>Cat Rides T Shirt</p>
-                  <a
-                    href="https://www.etsy.com/listing/471855658/cat-rides-llamacorn-mens-t-shirt-gt7547?gpla=1&gao=1&utm_campaign=shopping_us_GoodieTees_sfc_osa&utm_medium=cpc&utm_source=google&utm_custom1=0&utm_content=10071764&gclid=Cj0KCQiA-4nuBRCnARIsAHwyuPoCpMmuj9ea2_iYXpyDPSq2Sualx4bnjm72I-XG7RSih_If9uwpXRkaAmzUEALw_wcB"
-                    >Etsy</a
-                  >
-                </div>
-                <div class="card col-md-2">
-                  <img
-                    src="../assets/images/t3.jpg"
-                    alt="Denim Jeans"
-                    style="width:100%"
-                  />
-          
-                  <p class="price">$19.99</p>
-                  <p>Music is what</p>
-          
-                  <a
-                    href="https://www.etsy.com/listing/671791702/music-is-what-feelings-sound-like-womens?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=womens+music+shirts&ref=sr_gallery-1-7&organic_search_click=1&col=1"
-                    >Etsy</a
-                  >
-                </div>
-                <div class="card col-md-2">
-                  <img
-                    src="../assets/images/t5.jpg"
-                    alt="Denim Jeans"
-                    style="width:100%"
-                  />
-          
-                  <p class="price">$19.99</p>
-                  <p></p>
-                  <a
-                    href="https://www.google.com/shopping/product/2162428385801560575?rlz=1C1CHBF_enUS865US865&biw=1280&bih=561&sxsrf=ACYBGNS9cOG0OGdLtG_BXO2I0zTrsb5kWQ:1573094668154&q=music+tshirt+trending&oq=music+tshirt+trending&prds=epd:2707738772832694584,prmr:3&sa=X&ved=0ahUKEwiKj9OCi9flAhWVv54KHZqnCbsQwBMI9gQ"
-                    >Google Product</a
-                  >
-                </div>
-              </div>
-              <br><br>
-          
-             
-             
-              <div class="row">
-                <div class="card col-md-2">
-                  <img
-                    src="../assets/images/t6.jpg"
-                    alt="Denim Jeans"
-                    style="width:100%"
-                  />
-          
-                  <p class="price">$33.58</p>
-                  <p></p>
-                  <a
-                    href="https://www.google.com/search?rlz=1C1CHBF_enUS865US865&tbm=shop&sxsrf=ACYBGNTRQbZ9AoK_EsecBARumAcrQJ70bQ:1573097412177&q=mens+trending+music+merchandise&tbs=vw:g,mr:1,cat:212,pdtr0:933749%7C933756&sa=X&ved=0ahUKEwikqczDlNflAhUFsJ4KHeGVASIQwQkIwAcoAg&biw=1280&bih=561#spd=14988476144644306933"
-                    >Amazon</a
-                  >
-                </div>
-          
-                <div class="card col-md-2">
-                    <img
-                      src="../assets/images/t11.jpg"
-                      alt="Denim Jeans"
-                      style="width:100%"
-                    />
-                    <p class="price">$11.99</p>
-                    <a
-                      href="https://www.google.com/search?q=trending+music+merchandise&rlz=1C1CHBF_enUS865US865&sxsrf=ACYBGNRlGj-QO67sVgXM8uvOvYOh3dSxUQ:1573099202070&source=lnms&tbm=shop&sa=X&ved=0ahUKEwjG24qZm9flAhVSJjQIHQC2D3gQ_AUIEigB&biw=1280&bih=561#spd=11431797880247574187"
-                      >orstore</a
-                    >
-                  </div>
-          
-                  <div class="card col-md-2">
-                      <img
-                        src="../assets/images/t9.jpg"
-                        alt="Denim Jeans"
-                        style="width:100%"
-                      />
-                      <p class="price">$19.20</p>
-                      
-                      <a
-                        href="https://www.google.com/search?q=trending+music+merchandise&rlz=1C1CHBF_enUS865US865&sxsrf=ACYBGNRlGj-QO67sVgXM8uvOvYOh3dSxUQ:1573099202070&source=lnms&tbm=shop&sa=X&ved=0ahUKEwjG24qZm9flAhVSJjQIHQC2D3gQ_AUIEigB&biw=1280&bih=561#spd=6664470206145896304"
-                        >Red Bubble</a
-                      >
-                    </div>
-                    <div class="card col-md-2">
-                        <img
-                          src="../assets/images/t10.jpg"
-                          alt="Denim Jeans"
-                          style="width:100%"
-                        />
-                
-                        <p class="price">$49.99</p>
-                        <p></p>
-                        <a
-                          href="https://www.google.com/search?rlz=1C1CHBF_enUS865US865&tbm=shop&sxsrf=ACYBGNTNWf-f92F3rDh--Jqa7b-3twVlYA:1573099207418&q=trending+music+merchandise&tbs=vw:g,mr:1,cat:212,pdtr0:965178%7C965188&sa=X&ved=0ahUKEwjBjtGbm9flAhV4JzQIHbZmDhMQwQkIxAYoCA&biw=1280&bih=561&dpr=1.5#spd=10600523829534220945"
-                          >Google Product</a
-                        >
-                      </div>
-              </div>
-             
-            
-            
-            
-            
-            
-            
-            
-            </div>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-              <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
+  <div class="row">
+    <div class="card col-md-2">
+      <img src="../assets/images/t4.jpg" alt="Denim Jeans" style="width:100%" />
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <p class="price">$15.99</p>
+      <p>may be old</p>
+      <a
+        href="https://www.etsy.com/listing/683807181/i-may-be-old-but-i-got-to-see-all-the?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=womens+music+shirts&ref=sr_gallery-1-17&organic_search_click=1&frs=1&col=1">Etsy</a>
+    </div>
+
+    <div class="card col-md-2">
+      <img src="../assets/images/t2.jpg" alt="Denim Jeans" style="width:100%" />
+
+      <p class="price">$24.95</p>
+      <p>Cat Rides T Shirt</p>
+      <a
+        href="https://www.etsy.com/listing/471855658/cat-rides-llamacorn-mens-t-shirt-gt7547?gpla=1&gao=1&utm_campaign=shopping_us_GoodieTees_sfc_osa&utm_medium=cpc&utm_source=google&utm_custom1=0&utm_content=10071764&gclid=Cj0KCQiA-4nuBRCnARIsAHwyuPoCpMmuj9ea2_iYXpyDPSq2Sualx4bnjm72I-XG7RSih_If9uwpXRkaAmzUEALw_wcB">Etsy</a>
+    </div>
+    <div class="card col-md-2">
+      <img src="../assets/images/t3.jpg" alt="Denim Jeans" style="width:100%" />
+
+      <p class="price">$19.99</p>
+      <p>Music is what</p>
+
+      <a
+        href="https://www.etsy.com/listing/671791702/music-is-what-feelings-sound-like-womens?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=womens+music+shirts&ref=sr_gallery-1-7&organic_search_click=1&col=1">Etsy</a>
+    </div>
+    <div class="card col-md-2">
+      <img src="../assets/images/t5.jpg" alt="Denim Jeans" style="width:100%" />
+
+      <p class="price">$19.99</p>
+      <p></p>
+      <a
+        href="https://www.google.com/shopping/product/2162428385801560575?rlz=1C1CHBF_enUS865US865&biw=1280&bih=561&sxsrf=ACYBGNS9cOG0OGdLtG_BXO2I0zTrsb5kWQ:1573094668154&q=music+tshirt+trending&oq=music+tshirt+trending&prds=epd:2707738772832694584,prmr:3&sa=X&ved=0ahUKEwiKj9OCi9flAhWVv54KHZqnCbsQwBMI9gQ">Google
+        Product</a>
+    </div>
+  </div>
+  <br><br>
+
+
+
+  <div class="row">
+    <div class="card col-md-2">
+      <img src="../assets/images/t6.jpg" alt="Denim Jeans" style="width:100%" />
+
+      <p class="price">$33.58</p>
+      <p></p>
+      <a
+        href="https://www.google.com/search?rlz=1C1CHBF_enUS865US865&tbm=shop&sxsrf=ACYBGNTRQbZ9AoK_EsecBARumAcrQJ70bQ:1573097412177&q=mens+trending+music+merchandise&tbs=vw:g,mr:1,cat:212,pdtr0:933749%7C933756&sa=X&ved=0ahUKEwikqczDlNflAhUFsJ4KHeGVASIQwQkIwAcoAg&biw=1280&bih=561#spd=14988476144644306933">Amazon</a>
+    </div>
+
+    <div class="card col-md-2">
+      <img src="../assets/images/t11.jpg" alt="Denim Jeans" style="width:100%" />
+      <p class="price">$11.99</p>
+      <a
+        href="https://www.google.com/search?q=trending+music+merchandise&rlz=1C1CHBF_enUS865US865&sxsrf=ACYBGNRlGj-QO67sVgXM8uvOvYOh3dSxUQ:1573099202070&source=lnms&tbm=shop&sa=X&ved=0ahUKEwjG24qZm9flAhVSJjQIHQC2D3gQ_AUIEigB&biw=1280&bih=561#spd=11431797880247574187">orstore</a>
+    </div>
+
+    <div class="card col-md-2">
+      <img src="../assets/images/t9.jpg" alt="Denim Jeans" style="width:100%" />
+      <p class="price">$19.20</p>
+
+      <a
+        href="https://www.google.com/search?q=trending+music+merchandise&rlz=1C1CHBF_enUS865US865&sxsrf=ACYBGNRlGj-QO67sVgXM8uvOvYOh3dSxUQ:1573099202070&source=lnms&tbm=shop&sa=X&ved=0ahUKEwjG24qZm9flAhVSJjQIHQC2D3gQ_AUIEigB&biw=1280&bih=561#spd=6664470206145896304">Red
+        Bubble</a>
+    </div>
+    <div class="card col-md-2">
+      <img src="../assets/images/t10.jpg" alt="Denim Jeans" style="width:100%" />
+
+      <p class="price">$49.99</p>
+      <p></p>
+      <a
+        href="https://www.google.com/search?rlz=1C1CHBF_enUS865US865&tbm=shop&sxsrf=ACYBGNTNWf-f92F3rDh--Jqa7b-3twVlYA:1573099207418&q=trending+music+merchandise&tbs=vw:g,mr:1,cat:212,pdtr0:965178%7C965188&sa=X&ved=0ahUKEwjBjtGbm9flAhV4JzQIHbZmDhMQwQkIxAYoCA&biw=1280&bih=561&dpr=1.5#spd=10600523829534220945">Google
+        Product</a>
+    </div>
+  </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js">
+  </script>
+  <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+  <script src="assets/javascript/materialize.js"></script>
 
 </body>
 
