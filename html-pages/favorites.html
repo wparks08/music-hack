@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Hack</title>
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/homepage.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+        integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body id="home" class="scrollspy">
+    <!--Navbar-->
+    <div>
+        <nav class="purple navbar-fixed">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo left-align"> Music Hack </a>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger">
+                        <i class="material-icons"> menu </i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a href="../index.html"> Home</a>
+                        </li>
+                        <li>
+                            <a href="#search"> Search </a>
+                        </li>
+                        <li>
+                            <a href="#upcoming-events">Upcoming Events </a>
+                        </li>
+                        <li>
+                            <a href="#trending">Trending </a>
+                        </li>
+                        <li>
+                            <a href="#merchandise"> Merchandise </a>
+                        </li>
+                        <li>
+                            <a href="../html-pages/favorites.html"> Your Favorites </a>
+                        </li>
+                        <li>
+                            <a href="#contact"> Contact </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <ul class="sidenav" id="slide-out">
+            <li>
+                <a href="#home"> Home</a>
+            </li>
+            <li>
+                <a href="#search"> Search </a>
+            </li>
+            <li>
+                <a href="#upcoming-events">Upcoming Events </a>
+            </li>
+            <li>
+                <a href="#trending">Trending </a>
+            </li>
+            <li>
+                <a href="#merchandise"> Merchandise </a>
+            </li>
+            <li>
+                <a href="../html-pages/favorites.html"> Your Favorites </a>
+            </li>
+            <li>
+                <a href="#contact"> Contact </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Favorite events cards-->
+
+    <div id="popular favorite-events" class="section section-popular scrollspy">
+        <h2> Your Saved Events </h2>
+        <div class="container">
+            <div id="card-row" class="row">
+                <div id="card-row-container" class="col s12 m4 d-flex justify-content-between">
+                    <div class="card sticky-action">
+                        <div class="card-image">
+                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <a href="#" id="event-like-button" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons"> favorite </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Artist Name</span>
+                            <span class="card-title activator grey-text text-darken-4">Details<i
+                                    class="material-icons right">more_vert</i></span>
+                            <span id="location"></span>
+                            <span id="venue"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Buy Tickets </a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">close</i></span>
+                        </div>
+                    </div>
+                    <div class="card sticky-action">
+                        <div class="card-image">
+                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <a id="favorite-button" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons"> favorite </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Artist Name</span>
+                            <span class="card-title activator grey-text text-darken-4">Details<i
+                                    class="material-icons right">more_vert</i></span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                            <a href="#"> Buy Tickets </a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">close</i></span>
+                        </div>
+                    </div>
+                    <div class="card sticky-action">
+                        <div class="card-image">
+                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <a href="#" id="favorite-button" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons"> favorite </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Artist Name</span>
+                            <span class="card-title activator grey-text text-darken-4">Details<i
+                                    class="material-icons right">more_vert</i></span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                            <a href="#"> Buy Tickets </a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">close</i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js">
+    </script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script src="../assets/javascript/materialize.js"></script>
+    <script src="../assets/javascript/tm-api.js"></script>
+    <script src="../assets/javascript/favorites.js"></script>
+
+</body>
+
+</html>

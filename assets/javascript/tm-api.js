@@ -2,6 +2,7 @@ const API_KEY = "aogXWkLZYoHL6VP33CSwmGxFBaI7KfRK";
 const ROOT_URL = "https://app.ticketmaster.com/discovery/v2/";
 const EVENT_BY_ID_URL = "https://app.ticketmaster.com/discovery/v2/events/"
 const EVENT_SEARCH = "events.json?";
+const TARGET = "#card-row-container";
 
 /**
  * Search using the parameters defined in @options
@@ -39,16 +40,17 @@ function search(options, target) {
  */
 function getEventById(id, target) {
     let queryUrl = EVENT_BY_ID_URL + id + "?apikey=" + API_KEY;
-
+    target = "#favorite-events"
     $.ajax({
         url: queryUrl,
         method: "GET"
     }).then(function (result) {
         console.log(result);
         let properties = getEventProperties(result);
-        //DO STUFF TO DISPLAY
+        displayResult(result, target)
+
     }, function (error) {
-            console.log(error);
+        console.log(error);
     })
 }
 
@@ -94,7 +96,25 @@ $("#hack-it").on("click", function (event) {
     // $(".card--content").empty();
     $("#card-row-container").empty();
     var valueArtist = $("#artistSearch").val().trim();
-    searchByKeyword(valueArtist, "#card-row-container");
+    var valueLocation = $("#locationSearch").val().trim();
+
+    if (valueArtist === "") {
+        searchByCity(valueLocation, TARGET);
+    }
+    else if (valueLocation === "") {
+        searchByKeyword(valueArtist, TARGET);
+    }
+    else if (valueArtist != "" && valueLocation != "") {
+        searchByKeywordAndCity(valueArtist, valueLocation, TARGET)
+    }
+    else {
+        $("#card-row-container").text("There are no events with this search.");
+    }
+
+
+
+    $("#artistSearch").val("");
+    $("#locationSearch").val("");
 })
 
 
@@ -107,14 +127,15 @@ function displayResult(result, target) {
         // let sectionCard = $("<section>")
         //     .addClass("card");
         let container = $("<div>")
-            .addClass("card");
+            .addClass("card sticky-action");
         let imageDiv = $("<div>")
             .addClass("card-image");
         let image = $("<img>")
             .attr("src", properties.imageUrl);
         let iconLink = $("<a>")
-            .attr("href", "#")
-            .addClass("halfway-fab btn-floating pink pulse");
+            .attr("id", "event-like-button")
+            .addClass("halfway-fab btn-floating pink pulse")
+            .attr("data-id", event.id);
         let icon = $("<i>")
             .addClass("material-icons")
             .html("favorite");
@@ -123,6 +144,12 @@ function displayResult(result, target) {
         let artistSpan = $("<span>")
             .addClass("card-title")
             .html(properties.name);
+        let detailsIconSpan = $("<span>")
+            .addClass("card-title activator grey-text text-darken-4")
+            .html("Details");
+        let detailsIcon = $("<i>")
+            .addClass("material-icons right")
+            .html("more_vert");
         let locationSpan = $("<span>")
             .attr("id", "location")
             .html(properties.location.city + ", " + properties.location.state);
@@ -133,22 +160,28 @@ function displayResult(result, target) {
             .attr("id", "date")
         let cardActionDiv = $("<div>")
             .addClass("card-action")
-        let detailsLink = $("<a>")
-            .attr("href", "#")
-            .html("details");
         let ticketsLink = $("<a>")
             .attr("href", "#")
             .html("Buy Tickets");
+        let cardRevealDiv = $("<div>")
+            .addClass("card-reveal");
+        let cardRevealSpan = $("<span>")
+            .addClass("card-title grey-text text-darken-4")
+            .html(properties.name);
+        let closeIcon = $("<i>")
+            .addClass("material-icons right")
+            .html("close");
 
         container.append(
             imageDiv.append(
                 image, iconLink.append(icon)
             ),
             cardContentDiv.append(
-                artistSpan, locationSpan, venueSpan, dateSpan
+                artistSpan, detailsIconSpan.append(detailsIcon), locationSpan, venueSpan, dateSpan
             ),
-            cardActionDiv.append(
-                detailsLink, ticketsLink
+            cardActionDiv.append(ticketsLink),
+            cardRevealDiv.append(
+                cardRevealSpan.append(closeIcon)
             )
         );
 
@@ -232,3 +265,4 @@ function getEventUrl(event) {
         return "#";
     }
 }
+
