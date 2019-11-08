@@ -102,11 +102,11 @@ $("#hack-it").on("click", function (event) {
     }
     else if (valueLocation === "") {
         searchByKeyword(valueArtist, TARGET);
-        newsSearch({ q: valueArtist });
+        newsSearchByKeyword(valueArtist);
     }
     else if (valueArtist != "" && valueLocation != "") {
         searchByKeywordAndCity(valueArtist, valueLocation, TARGET);
-        newsSearch({ q: valueArtist });
+        newsSearchByKeyword(valueArtist);
     }
     else {
         $("#card-row-container").text("There are no events with this search.");
