@@ -146,7 +146,7 @@ function displayResult(result) {
 
 function getEventProperties(event) {
     let properties = {
-        name: getName(event);
+        name: getName(event),
         imageUrl: getImageUrl(event),
         location: getLocation(event),
         eventUrl: getEventUrl(event, this)
