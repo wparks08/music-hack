@@ -93,7 +93,6 @@ function searchByKeywordAndCity(keyword, city, target) {
 $("#hack-it").on("click", function (event) {
     event.preventDefault();
     console.log("this kind of works")
-    // $(".card--content").empty();
     $("#card-row-container").empty();
     var valueArtist = $("#artistSearch").val().trim();
     var valueLocation = $("#locationSearch").val().trim();
@@ -103,9 +102,11 @@ $("#hack-it").on("click", function (event) {
     }
     else if (valueLocation === "") {
         searchByKeyword(valueArtist, TARGET);
+        newsSearchByKeyword(valueArtist);
     }
     else if (valueArtist != "" && valueLocation != "") {
-        searchByKeywordAndCity(valueArtist, valueLocation, TARGET)
+        searchByKeywordAndCity(valueArtist, valueLocation, TARGET);
+        newsSearchByKeyword(valueArtist);
     }
     else {
         $("#card-row-container").text("There are no events with this search.");
@@ -124,8 +125,6 @@ function displayResult(result, target) {
     result["_embedded"].events.forEach(function (event) {
         var properties = getEventProperties(event);
 
-        // let sectionCard = $("<section>")
-        //     .addClass("card");
         let container = $("<div>")
             .addClass("card sticky-action");
         let imageDiv = $("<div>")
