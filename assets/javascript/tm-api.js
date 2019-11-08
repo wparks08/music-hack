@@ -54,9 +54,21 @@ $("#hack-it").on("click", function (event) {
     console.log("this kind of works")
     // $(".card--content").empty();
     $("#card-row-container").empty();
-
     var valueArtist = $("#artistSearch").val().trim();
-    searchByKeyword(valueArtist);
+    var valueLocation = $("#locationSearch").val().trim();
+
+    if (valueArtist === "") {
+        searchByCity(valueLocation);
+    }
+    else if (valueLocation === "") {
+        searchByKeyword(valueArtist);
+    }
+    else
+
+
+
+        $("#artistSearch").val("");
+    $("#locationSearch").val("");
 })
 
 
@@ -75,8 +87,9 @@ function displayResult(result) {
         let image = $("<img>")
             .attr("src", properties.imageUrl);
         let iconLink = $("<a>")
-            .attr("href", "#")
-            .addClass("halfway-fab btn-floating pink pulse");
+            .attr("id", "event-like-button")
+            .addClass("halfway-fab btn-floating pink pulse")
+            .attr("data-id", event.id);
         let icon = $("<i>")
             .addClass("material-icons")
             .html("favorite");
@@ -196,3 +209,4 @@ function getEventUrl(event) {
         return "#";
     }
 }
+
