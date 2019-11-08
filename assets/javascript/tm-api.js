@@ -1,13 +1,18 @@
 const API_KEY = "aogXWkLZYoHL6VP33CSwmGxFBaI7KfRK";
 const ROOT_URL = "https://app.ticketmaster.com/discovery/v2/";
+const EVENT_BY_ID_URL = "https://app.ticketmaster.com/discovery/v2/events/"
 const EVENT_SEARCH = "events.json?";
 
 /**
  * Search using the parameters defined in @options
  * @param {Object} options 
  */
-function search(options) {
+function search(options, target) {
     let queryUrl = ROOT_URL + EVENT_SEARCH + "apikey=" + API_KEY;
+
+    options.classificationName = "music";
+    options.sort = "date,asc";
+
     let params = Object.entries(options);
     params.forEach(function (param) {
         queryUrl += "&" + param[0] + "=" + param[1];
@@ -20,32 +25,66 @@ function search(options) {
     }).then(function (result) {
         // return result
         console.log(result);
-        displayResult(result);
+        displayResult(result, target);
     }, function (error) {
         console.log(error);
     });
 }
 
 /**
+ * get an event by the supplied ID, and display it in the "target" element
+ * "target" should be an element id, eg "#target-element"
+ * @param {string} id 
+ * @param {string} target 
+ */
+function getEventById(id, target) {
+    let queryUrl = EVENT_BY_ID_URL + id + "?apikey=" + API_KEY;
+
+    $.ajax({
+        url: queryUrl,
+        method: "GET"
+    }).then(function (result) {
+        console.log(result);
+        let properties = getEventProperties(result);
+        //DO STUFF TO DISPLAY
+    }, function (error) {
+            console.log(error);
+    })
+}
+
+/**
  * Search for music event by a keyword
  * @param {string} keyword 
+ * @param {string} target
  */
-function searchByKeyword(keyword) {
+function searchByKeyword(keyword, target) {
     search({
-        keyword: keyword,
-        classificationName: "music"
-    });
+        keyword: keyword
+    }, target);
 }
 
 /**
  * Search for a music event by city
  * @param {string} city 
+ * @param {string} target
  */
-function searchByCity(city) {
+function searchByCity(city, target) {
     search({
-        city: city,
-        classificationName: "music"
-    })
+        city: city
+    }, target)
+}
+
+/**
+ * Search by both keyword and city, and display the result in "target"
+ * @param {string} keyword 
+ * @param {string} city 
+ * @param {string} target 
+ */
+function searchByKeywordAndCity(keyword, city, target) {
+    search({
+        keyword: keyword,
+        city: city
+    }, target);
 }
 
 //onclick function to push data information into upcoming events cards
@@ -55,13 +94,13 @@ $("#hack-it").on("click", function (event) {
     // $(".card--content").empty();
     $("#card-row-container").empty();
     var valueArtist = $("#artistSearch").val().trim();
-    searchByKeyword(valueArtist);
+    searchByKeyword(valueArtist, "#card-row-container");
 })
 
 
 
-function displayResult(result) {
-    let target = $("#card-row-container");
+function displayResult(result, target) {
+    let targetElement = $(target);
     result["_embedded"].events.forEach(function (event) {
         var properties = getEventProperties(event);
 
@@ -83,7 +122,7 @@ function displayResult(result) {
             .addClass("card-content")
         let artistSpan = $("<span>")
             .addClass("card-title")
-            .html(event.name);
+            .html(properties.name);
         let locationSpan = $("<span>")
             .attr("id", "location")
             .html(properties.location.city + ", " + properties.location.state);
@@ -113,7 +152,7 @@ function displayResult(result) {
             )
         );
 
-        target.append(container);
+        targetElement.append(container);
 
 
 
@@ -122,6 +161,7 @@ function displayResult(result) {
 
 function getEventProperties(event) {
     let properties = {
+        name: getName(event),
         imageUrl: getImageUrl(event),
         location: getLocation(event),
         eventUrl: getEventUrl(event, this)
@@ -129,6 +169,15 @@ function getEventProperties(event) {
 
 
     return properties
+}
+
+function getName(event) {
+    try {
+        return event.name;
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
 }
 
 function getImageUrl(event) {
