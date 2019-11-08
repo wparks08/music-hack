@@ -2,289 +2,324 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Hack</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <link rel="stylesheet" type="text/css" href="../project-1/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../project-1/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../project-1/assets/css/homepage.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
         integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
-
-    <title>Music Hack</title>
-
-    <!-- Bootstrap core CSS -->
-    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-
-    <!-- Custom fonts for this template -->
-    <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css"> -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-        type="text/css">
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html"> Home </a>
-            <!-- <a class="navbar-brand" href="html-pages/genre.html"> Genre </a>
-            <a class="navbar-brand" href="html-pages/trending.html"> Trending </a>
-            <a class="navbar-brand" href="html-pages/merchandise.html"> Merchandise </a> -->
-            <a class="navbar-brand" href="html-pages/contact.html">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Masthead -->
-    <header class="masthead text-white text-center">
-        <div class="overlay">
-            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-                <source src="../project-1/assets/images/concert-video-pexels.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-9 mx-auto">
-                    <h1 class="mb-5 page-title">Music Hack </h1>
-                    <h2 class="mb-5"> Get your latest concert scoop. </h2>
-                </div>
-                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                    <form>
-                        <div class="form-row">
-                            <div class="col-12 col-md-9 mb-2 mb-md-0">
-                                <input id="user-input" class="form-control form-control-lg"
-                                    placeholder="Search by artist or location">
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <button type="submit" class="btn btn-block btn-lg btn-primary hack-it"> Hack It!
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Icons Grid -->
-    <section class="features-icons bg-light text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 icon-text">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 icons">
-                        <div class="features-icons-icon d-flex">
-                            <a href="#upcoming-events"><i id="icon-calendar"
-                                    class="far fa-calendar-alt m-auto text-primary"></i></a>
-                        </div>
-                        <h3> Upcoming Events </h3>
-                        <p class="lead mb-0"> Find upcoming concerts and tickets! </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 icon-text">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 icons">
-                        <div class="features-icons-icon d-flex">
-                            <a href="#trending"><i id="icon-chart-line"
-                                    class="fas fa-chart-line m-auto text-primary"></i></a>
-                        </div>
-                        <h3> Social Media Trends </h3>
-                        <p class="lead mb-0">Featuring the latest trends related to the concert you're looking for.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 icon-text">
-                    <div class="features-icons-item mx-auto mb-0 mb-lg-3 icons">
-                        <div class="features-icons-icon d-flex">
-                            <a href="#merchandise"><i id="icon-merch" class="fas fa-tshirt m-auto text-primary"></i></a>
-                        </div>
-                        <h3> Merchandise </h3>
-                        <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Image Showcases -->
-    <section class="showcase">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-
-
-                <div id="upcoming-events" class="col-lg-12 order-lg-1 my-auto showcase-text">
-                    <h2> Upcoming Events </h2>
-                    <section class="card">
-                        <div class="card--content">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">Adele</h5>
-                                    <p class="card-text">Location: <span id="location"></span></p>
-                                    <a href="#" class="btn btn-primary">Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-            <div class="row no-gutters">
-
-                <div id="trending" class="col-lg-12 my-auto showcase-text">
-                    <h2> Trending </h2>
-                    <section class="card">
-                        <div class="card--content">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">Adele</h5>
-                                    <p class="card-text">Location: <span id="location"></span></p>
-                                    <a href="#" class="btn btn-primary">Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-            <div class="row no-gutters">
-
-                <div id="merchandise" class="col-lg-12 order-lg-1 my-auto showcase-text">
-                    <h2> Merchandise </h2>
-                    <section class="card">
-                        <div class="card--content">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">Adele</h5>
-                                    <p class="card-text">Location: <span id="location"></span></p>
-                                    <a href="#" class="btn btn-primary">Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <!-- <section class="testimonials text-center bg-light">
-        <div class="container">
-            <h2 class="mb-5">What people are saying...</h2>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
-                        <h5>Margaret E.</h5>
-                        <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
-                        <h5>Fred S.</h5>
-                        <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of
-                            super nice landing pages."</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
-                        <h5>Sarah W.</h5>
-                        <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to
-                            us!"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Call to Action -->
-    <section class="call-to-action text-white text-center">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-9 mx-auto">
-                    <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-                </div>
-                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                    <form>
-                        <div class="form-row">
-                            <div class="col-12 col-md-9 mb-2 mb-md-0">
-                                <input type="email" class="form-control form-control-lg"
-                                    placeholder="Enter your email...">
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <!-- <footer class="footer bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-                    <ul class="list-inline mb-2">
-                        <li class="list-inline-item">
-                            <a href="#">About</a>
+<body id="home" class="scrollspy">
+    <!--Navbar-->
+    <div>
+        <nav class="purple navbar-fixed">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo left-align"> Music Hack </a>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger">
+                        <i class="material-icons"> menu </i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a href="#home"> Home</a>
                         </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Contact</a>
+                        <li>
+                            <a href="#search"> Search </a>
                         </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Terms of Use</a>
+                        <li>
+                            <a href="#upcoming-events">Upcoming Events </a>
                         </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Privacy Policy</a>
+                        <li>
+                            <a href="#trending">Trending </a>
                         </li>
-                    </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item mr-3">
-                            <a href="#">
-                                <i class="fab fa-facebook fa-2x fa-fw"></i>
-                            </a>
+                        <li>
+                            <a href="#merchandise"> Merchandise </a>
                         </li>
-                        <li class="list-inline-item mr-3">
-                            <a href="#">
-                                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-instagram fa-2x fa-fw"></i>
-                            </a>
+                        <li>
+                            <a href="#contact"> Contact </a>
                         </li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </footer> -->
+        </nav>
+        <ul class="sidenav" id="slide-out">
+            <li>
+                <a href="#home"> Home</a>
+            </li>
+            <li>
+                <a href="#search"> Search </a>
+            </li>
+            <li>
+                <a href="#upcoming-events">Upcoming Events </a>
+            </li>
+            <li>
+                <a href="#trending">Trending </a>
+            </li>
+            <li>
+                <a href="#merchandise"> Merchandise </a>
+            </li>
+            <li>
+                <a href="#contact"> Contact </a>
+            </li>
+        </ul>
+    </div>
 
-    <!-- Bootstrap core JavaScript -->
-    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
-    <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- Slides Header -->
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="assets/images/Concertimg1.jpg">
+                <div class="caption center-align">
+                    <h3> Find your favorite artists playing near you!</h3>
+                </div>
+            </li>
+            <li>
+                <img src="assets/images/concertimg2.jpg">
+                <div class="caption center-align">
+                    <h3> Get the latest scoop on artists you like!</h3>
+                </div>
+            </li>
+            <li>
+                <img src="assets/images/concertimg3.jpg">
+                <div class="caption center-align">
+                    <h3> Shop for products related to your favorite musician or band! </h3>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Search Form -->
+    <div id="search" class="section section-search purple darken-1 white-text center scrollspy">
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    <h3>Search Artist</h3>
+                    <div class="input-field">
+                        <i class="material-icons"> music_note</i>
+                        <input id="artistSearch" type="text" class="white grey-text">
+                    </div>
+                </div>
+                <div class="col s6">
+                    <h3>Search Location</h3>
+                    <div class="input-field location">
+                        <i class="material-icons"> add_location </i>
+                        <input id="locationSearch" type="text" class="white grey-text">
+                    </div>
+                </div>
+            </div>
+            <div row>
+                <div class="col-12 col-md-3">
+                    <button id="hack-it" type="submit" class="btn btn-block btn-lg btn-primary"> Hack It!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming Events cards-->
+    <div id="popular upcoming-events" class="section section-popular scrollspy">
+        <h2> Upcoming Events </h2>
+        <div class="container">
+            <div id="card-row" class="row">
+                <div id="card-row-container" class="col s12 m4 d-flex justify-content-between">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <a href="#" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons"> favorite </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Artist Name</span>
+                            <span id="location"></span>
+                            <span id="venue"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                            <a href="#"> Buy Tickets </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <a href="#" id="favorite-button" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons"> favorite </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Artist Name</span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                            <a href="#"> Buy Tickets </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <a href="#" id="favorite-button" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons"> favorite </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Artist Name</span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                            <a href="#"> Buy Tickets </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Trending cards-->
+    <div id="popular trending" class="section section-popular scrollspy">
+        <h2> Trending </h2>
+        <div class="container">
+            <div id="card-row" class="row">
+                <div class="col s12 m4 d-flex justify-content-between">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <a href="#" id="like-button" class="halfway-fab btn-floating green pulse">
+                                <i class="material-icons"> check </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Headline</span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <a href="#" id="like-button" class="halfway-fab btn-floating green pulse">
+                                <i class="material-icons"> check </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Headline</span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <a href="#" id="like-button" class="halfway-fab btn-floating green pulse">
+                                <i class="material-icons"> check </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Headline</span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Merchandise cards-->
+    <div id="popular merchandise" class="section section-popular scrollspy">
+        <h2> Merchandise </h2>
+        <div class="container">
+            <div id="card-row" class="row">
+                <div class="col s12 m4 d-flex justify-content-between">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <a href="#" id="shop-button" class="halfway-fab btn-floating blue pulse">
+                                <i class="material-icons"> add_shopping_cart </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Product Name</span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                            <a href="#"> Shop Product </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <a href="#" id="shop-button" class="halfway-fab btn-floating blue pulse">
+                                <i class="material-icons"> add_shopping_cart </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Product Name</span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                            <a href="#"> Shop Product </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <a href="#" id="shop-button" class="halfway-fab btn-floating blue pulse">
+                                <i class="material-icons"> add_shopping_cart </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Product Name</span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                            <a href="#"> Shop Product </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js">
+    </script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script src="assets/javascript/materialize.js"></script>
     <script src="assets/javascript/tm-api.js"></script>
-    <script src="assets/javascript/logic.js"></script>
 
 </body>
 
