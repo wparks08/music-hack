@@ -1,12 +1,14 @@
 const API_KEY = "aogXWkLZYoHL6VP33CSwmGxFBaI7KfRK";
 const ROOT_URL = "https://app.ticketmaster.com/discovery/v2/";
+const EVENT_BY_ID_URL = "https://app.ticketmaster.com/discovery/v2/events/"
 const EVENT_SEARCH = "events.json?";
+const TARGET = "#card-row-container";
 
 /**
  * Search using the parameters defined in @options
  * @param {Object} options 
  */
-function search(options) {
+function search(options, target) {
     let queryUrl = ROOT_URL + EVENT_SEARCH + "apikey=" + API_KEY;
 
     options.classificationName = "music";
@@ -24,22 +26,29 @@ function search(options) {
     }).then(function (result) {
         // return result
         console.log(result);
-        displayResult(result);
+        displayResult(result, target);
     }, function (error) {
         console.log(error);
     });
 }
 
-function getEventById(id) {
+/**
+ * get an event by the supplied ID, and display it in the "target" element
+ * "target" should be an element id, eg "#target-element"
+ * @param {string} id 
+ * @param {string} target 
+ */
+function getEventById(id, target) {
     let queryUrl = EVENT_BY_ID_URL + id + "?apikey=" + API_KEY;
-
+    target = "#favorite-events"
     $.ajax({
         url: queryUrl,
         method: "GET"
     }).then(function (result) {
         console.log(result);
         let properties = getEventProperties(result);
-        //DO STUFF TO DISPLAY
+        displayResult(result, target)
+
     }, function (error) {
         console.log(error);
     })
@@ -48,28 +57,36 @@ function getEventById(id) {
 /**
  * Search for music event by a keyword
  * @param {string} keyword 
+ * @param {string} target
  */
-function searchByKeyword(keyword) {
+function searchByKeyword(keyword, target) {
     search({
         keyword: keyword
-    });
+    }, target);
 }
 
 /**
  * Search for a music event by city
  * @param {string} city 
+ * @param {string} target
  */
-function searchByCity(city) {
+function searchByCity(city, target) {
     search({
         city: city
-    })
+    }, target)
 }
 
-function searchByKeywordAndCity(keyword, city) {
+/**
+ * Search by both keyword and city, and display the result in "target"
+ * @param {string} keyword 
+ * @param {string} city 
+ * @param {string} target 
+ */
+function searchByKeywordAndCity(keyword, city, target) {
     search({
         keyword: keyword,
         city: city
-    });
+    }, target);
 }
 
 //onclick function to push data information into upcoming events cards
@@ -82,13 +99,13 @@ $("#hack-it").on("click", function (event) {
     var valueLocation = $("#locationSearch").val().trim();
 
     if (valueArtist === "") {
-        searchByCity(valueLocation);
+        searchByCity(valueLocation, TARGET);
     }
     else if (valueLocation === "") {
-        searchByKeyword(valueArtist);
+        searchByKeyword(valueArtist, TARGET);
     }
     else if (valueArtist != "" && valueLocation != "") {
-        searchByKeywordAndCity(valueArtist, valueLocation)
+        searchByKeywordAndCity(valueArtist, valueLocation, TARGET)
     }
     else {
         $("#card-row-container").text("There are no events with this search.");
@@ -102,8 +119,8 @@ $("#hack-it").on("click", function (event) {
 
 
 
-function displayResult(result) {
-    let target = $("#card-row-container");
+function displayResult(result, target) {
+    let targetElement = $(target);
     result["_embedded"].events.forEach(function (event) {
         var properties = getEventProperties(event);
 
@@ -168,7 +185,7 @@ function displayResult(result) {
             )
         );
 
-        target.append(container);
+        targetElement.append(container);
 
 
 

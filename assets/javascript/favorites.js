@@ -1,27 +1,34 @@
-// eventFavorites = [];
-
-
-
-// //onclick button function that takes the contents of the entire event card and pushes up to
-// //event favorites array 
-// //for loop that displays contents of look in carousel card 
-// //check for repeats in cards??
-// var eventFavorites = JSON.parse(localStorage.getItem("eventFavorites"))
-
-// if (!eventFavorites) {
-//     eventFavorites = [];
-// }
-// $(document).on("click", "#event-like-button", function () {
-//     console.log(".card .sticky-action");
-
-// })
-
-// class savedEvent {
-//     constructor(imageUrl, name, location, city, state, venue)
-// }
-
-// onclick functions to save favorite events
 eventFavorites = [];
+
+
+function toggleEventLike(element) {
+    if (eventFavorites.includes(element.data("id"))) {
+        fillFavoriteStar(element);
+    } else {
+        outlineFavoriteStar(element);
+    }
+}
+
+function fillEventLike(element) {
+    element.empty();
+    element.append(
+        $("<i>")
+            .addClass("material-icons")
+            .text("favorite_border")
+    );
+}
+
+function outlineEventLike(element) {
+    element.empty();
+    element.append(
+        $("<i>")
+            .addClass("material-icons")
+            .text("favorite")
+    );
+}
+
+
+
 
 
 
