@@ -8,6 +8,10 @@ const EVENT_SEARCH = "events.json?";
  */
 function search(options) {
     let queryUrl = ROOT_URL + EVENT_SEARCH + "apikey=" + API_KEY;
+
+    options.classificationName = "music";
+    options.sort = "date,asc";
+
     let params = Object.entries(options);
     params.forEach(function (param) {
         queryUrl += "&" + param[0] + "=" + param[1];
@@ -26,14 +30,28 @@ function search(options) {
     });
 }
 
+function getEventById(id) {
+    let queryUrl = EVENT_BY_ID_URL + id + "?apikey=" + API_KEY;
+
+    $.ajax({
+        url: queryUrl,
+        method: "GET"
+    }).then(function (result) {
+        console.log(result);
+        let properties = getEventProperties(result);
+        //DO STUFF TO DISPLAY
+    }, function (error) {
+        console.log(error);
+    })
+}
+
 /**
  * Search for music event by a keyword
  * @param {string} keyword 
  */
 function searchByKeyword(keyword) {
     search({
-        keyword: keyword,
-        classificationName: "music"
+        keyword: keyword
     });
 }
 
@@ -43,9 +61,15 @@ function searchByKeyword(keyword) {
  */
 function searchByCity(city) {
     search({
-        city: city,
-        classificationName: "music"
+        city: city
     })
+}
+
+function searchByKeywordAndCity(keyword, city) {
+    search({
+        keyword: keyword,
+        city: city
+    });
 }
 
 //onclick function to push data information into upcoming events cards
@@ -63,11 +87,16 @@ $("#hack-it").on("click", function (event) {
     else if (valueLocation === "") {
         searchByKeyword(valueArtist);
     }
-    else
+    else if (valueArtist != "" && valueLocation != "") {
+        searchByKeywordAndCity(valueArtist, valueLocation)
+    }
+    else {
+        $("#card-row-container").text("There are no events with this search.");
+    }
 
 
 
-        $("#artistSearch").val("");
+    $("#artistSearch").val("");
     $("#locationSearch").val("");
 })
 
@@ -97,7 +126,7 @@ function displayResult(result) {
             .addClass("card-content")
         let artistSpan = $("<span>")
             .addClass("card-title")
-            .html(event.name);
+            .html(properties.name);
         let detailsIconSpan = $("<span>")
             .addClass("card-title activator grey-text text-darken-4")
             .html("Details");
@@ -121,7 +150,7 @@ function displayResult(result) {
             .addClass("card-reveal");
         let cardRevealSpan = $("<span>")
             .addClass("card-title grey-text text-darken-4")
-            .html(event.name);
+            .html(properties.name);
         let closeIcon = $("<i>")
             .addClass("material-icons right")
             .html("close");
@@ -148,6 +177,7 @@ function displayResult(result) {
 
 function getEventProperties(event) {
     let properties = {
+        name: getName(event),
         imageUrl: getImageUrl(event),
         location: getLocation(event),
         eventUrl: getEventUrl(event, this)
@@ -155,6 +185,15 @@ function getEventProperties(event) {
 
 
     return properties
+}
+
+function getName(event) {
+    try {
+        return event.name;
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
 }
 
 function getImageUrl(event) {

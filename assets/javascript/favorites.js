@@ -49,7 +49,7 @@ $(document).on("click", "#event-like-button", function () {
         localStorage.setItem("eventFavorites", JSON.stringify(eventFavorites));
     }
     else {
-        alert("This cartoon has already been saved.");
+
     }
 
 })
