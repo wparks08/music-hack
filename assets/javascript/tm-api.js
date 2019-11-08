@@ -31,7 +31,13 @@ function search(options, target) {
     });
 }
 
-function getEventById(id) {
+/**
+ * get an event by the supplied ID, and display it in the "target" element
+ * "target" should be an element id, eg "#target-element"
+ * @param {string} id 
+ * @param {string} target 
+ */
+function getEventById(id, target) {
     let queryUrl = EVENT_BY_ID_URL + id + "?apikey=" + API_KEY;
 
     $.ajax({
@@ -49,6 +55,7 @@ function getEventById(id) {
 /**
  * Search for music event by a keyword
  * @param {string} keyword 
+ * @param {string} target
  */
 function searchByKeyword(keyword, target) {
     search({
@@ -59,6 +66,7 @@ function searchByKeyword(keyword, target) {
 /**
  * Search for a music event by city
  * @param {string} city 
+ * @param {string} target
  */
 function searchByCity(city, target) {
     search({
@@ -66,6 +74,12 @@ function searchByCity(city, target) {
     }, target)
 }
 
+/**
+ * Search by both keyword and city, and display the result in "target"
+ * @param {string} keyword 
+ * @param {string} city 
+ * @param {string} target 
+ */
 function searchByKeywordAndCity(keyword, city, target) {
     search({
         keyword: keyword,
