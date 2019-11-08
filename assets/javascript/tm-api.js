@@ -107,7 +107,7 @@ function displayResult(result) {
             .addClass("card-content")
         let artistSpan = $("<span>")
             .addClass("card-title")
-            .html(event.name);
+            .html(properties.name);
         let locationSpan = $("<span>")
             .attr("id", "location")
             .html(properties.location.city + ", " + properties.location.state);
@@ -146,6 +146,7 @@ function displayResult(result) {
 
 function getEventProperties(event) {
     let properties = {
+        name: getName(event);
         imageUrl: getImageUrl(event),
         location: getLocation(event),
         eventUrl: getEventUrl(event, this)
@@ -153,6 +154,15 @@ function getEventProperties(event) {
 
 
     return properties
+}
+
+function getName(event) {
+    try {
+        return event.name;
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
 }
 
 function getImageUrl(event) {
