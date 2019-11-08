@@ -1,5 +1,6 @@
 const API_KEY = "aogXWkLZYoHL6VP33CSwmGxFBaI7KfRK";
 const ROOT_URL = "https://app.ticketmaster.com/discovery/v2/";
+const EVENT_BY_ID_URL = "https://app.ticketmaster.com/discovery/v2/events/"
 const EVENT_SEARCH = "events.json?";
 
 /**
