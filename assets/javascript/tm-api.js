@@ -54,6 +54,7 @@ $("#hack-it").on("click", function (event) {
     console.log("this kind of works")
     // $(".card--content").empty();
     $("#card-row-container").empty();
+
     var valueArtist = $("#artistSearch").val().trim();
     searchByKeyword(valueArtist);
 })
@@ -68,7 +69,7 @@ function displayResult(result) {
         // let sectionCard = $("<section>")
         //     .addClass("card");
         let container = $("<div>")
-            .addClass("card");
+            .addClass("card sticky-action");
         let imageDiv = $("<div>")
             .addClass("card-image");
         let image = $("<img>")
@@ -84,6 +85,12 @@ function displayResult(result) {
         let artistSpan = $("<span>")
             .addClass("card-title")
             .html(event.name);
+        let detailsIconSpan = $("<span>")
+            .addClass("card-title activator grey-text text-darken-4")
+            .html("Details");
+        let detailsIcon = $("<i>")
+            .addClass("material-icons right")
+            .html("more_vert");
         let locationSpan = $("<span>")
             .attr("id", "location")
             .html(properties.location.city + ", " + properties.location.state);
@@ -94,22 +101,28 @@ function displayResult(result) {
             .attr("id", "date")
         let cardActionDiv = $("<div>")
             .addClass("card-action")
-        let detailsLink = $("<a>")
-            .attr("href", "#")
-            .html("details");
         let ticketsLink = $("<a>")
             .attr("href", "#")
             .html("Buy Tickets");
+        let cardRevealDiv = $("<div>")
+            .addClass("card-reveal");
+        let cardRevealSpan = $("<span>")
+            .addClass("card-title grey-text text-darken-4")
+            .html(event.name);
+        let closeIcon = $("<i>")
+            .addClass("material-icons right")
+            .html("close");
 
         container.append(
             imageDiv.append(
                 image, iconLink.append(icon)
             ),
             cardContentDiv.append(
-                artistSpan, locationSpan, venueSpan, dateSpan
+                artistSpan, detailsIconSpan.append(detailsIcon), locationSpan, venueSpan, dateSpan
             ),
-            cardActionDiv.append(
-                detailsLink, ticketsLink
+            cardActionDiv.append(ticketsLink),
+            cardRevealDiv.append(
+                cardRevealSpan.append(closeIcon)
             )
         );
 
