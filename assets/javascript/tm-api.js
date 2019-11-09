@@ -175,7 +175,13 @@ function displayResult(result, target) {
             .addClass("material-icons right")
             .html("close");
 
-            let eventDetails = 
+            let eventDetails = $("<div>");
+            eventDetails.append([
+                $("<p>Event Date: " + properties.eventDate + "</p>"),
+                $("<p>Tickets On Sale: " + properties.onSaleDate + "</p>")
+            ])
+
+
         container.append(
             imageDiv.append(
                 image, iconLink.append(icon)
@@ -185,7 +191,7 @@ function displayResult(result, target) {
             ),
             cardActionDiv.append(ticketsLink),
             cardRevealDiv.append(
-                [cardRevealSpan.append(closeIcon), ]
+                [cardRevealSpan.append(closeIcon), eventDetails]
             )
         );
 
@@ -206,7 +212,7 @@ function getEventProperties(event) {
         onSaleDate: getOnSaleDate(event)
     }
 
-
+    console.log(properties);
     return properties
 }
 
@@ -274,7 +280,8 @@ function getEventUrl(event) {
 
 function getEventDate(event) {
     try {
-        return event.dates.start.localDate;
+        let eventDate = new Date(event.dates.start.localDate);
+        return eventDate.toLocaleDateString();
     } catch (error) {
         console.debug(error);
         return "";
@@ -283,7 +290,11 @@ function getEventDate(event) {
 
 function getOnSaleDate(event) {
     try {
-        return 
+        let onSaleDate = new Date(event.sales.public.startDateTime);
+
+        return onSaleDate.toLocaleDateString();
+    } catch (error) {
+        console.debug(error);
+        return "";
     }
 }
-
