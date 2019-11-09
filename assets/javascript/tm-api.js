@@ -101,7 +101,20 @@ $("#hack-it").on("click", function (event) {
             locationSearch: {
                 required: "#artistSearch:blank"
             }
+        },
+        errorElement: 'span',
+        errorPlacement: function (error, element) {
+            var type = $(element).attr("type");
+            if (type === "radio") {
+                // custom placement
+                error.insertAfter(element).wrap('<li/>');
+            } else if (type === "checkbox") {
+                // custom placement
+                error.insertAfter(element).wrap('<li/>');
+            } else {
+                error.insertAfter(element).wrap('<div/>');
         }
+    },
     });
 
     if (!($("#search-form").valid())) {
