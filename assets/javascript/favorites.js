@@ -2,21 +2,37 @@ eventFavorites = [];
 
 
 function toggleEventLike(element) {
-    var iconInfo = $(element).attr("data")
+    var eventIconInfo = $(element).attr("data")
 
     $(element).attr("data", $(element).attr("data-alt"))
-    $(element).attr("data-alt", iconInfo)
+    $(element).attr("data-alt", eventIconInfo)
 
 
 
-    var icon = document.getElementById("favorite-icon");
-    if (icon.innerHTML === "favorite") {
-        icon.innerHTML = "favorite_border";
+    var eventIcon = $(element).attr("id", "favorite-icon");
+    if (eventIcon.html() === "favorite") {
+        eventIcon.html("favorite_border");
     }
     else {
-        icon.innerHTML = "favorite";
+        eventIcon.html("favorite");
     }
 
+}
+
+function toggleTrendingLike(element) {
+    var trendingIconInfo = $(element).attr("data")
+    $(element).attr("data", $(element).attr("data-alt"))
+    $(element).attr("data-alt", trendingIconInfo)
+
+
+
+    var icon = $(element).attr("id", "check-icon");
+    if (icon.html() === "done") {
+        icon.html("done_all");
+    }
+    else {
+        icon.html("done");
+    }
 }
 
 
@@ -36,7 +52,7 @@ function toggleEventLike(element) {
 // if (!eventFavorites) {
 //     eventFavorites = [];
 // }
-$(document).on("click", "#event-like-button", function () {
+$(document).on("click", "#event-like-button", function (event) {
     event.preventDefault();
     console.log($(this).children()[0]);
     console.log($(this).data("id"));
@@ -58,6 +74,14 @@ $(document).on("click", "#event-like-button", function () {
 
     // }
 
+})
+
+$(document).on("click", "#like-button", function (event) {
+    event.preventDefault();
+    console.log(this)
+    console.log($(this).children()[0]);
+    console.log($(this).data("id"));
+    toggleTrendingLike($(this).children()[0]);
 })
 
 //onclick function that removes the card from eventFavorites array

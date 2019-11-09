@@ -34,74 +34,77 @@ function newsSearchByKeyword(keyword) {
 }
 
 function displayNewsResult(articles, target) {
-        // Available properties:
-        // article.author
-        // article.content
-        // article.description
-        // article.publishedAt -- date formatted as YYYY-MM-DDTHH:mm:ssz
-        // article.source.name
-        // article.title
-        // article.url
-        // article.urlToImage
+    // Available properties:
+    // article.author
+    // article.content
+    // article.description
+    // article.publishedAt -- date formatted as YYYY-MM-DDTHH:mm:ssz
+    // article.source.name
+    // article.title
+    // article.url
+    // article.urlToImage
     let targetElement = $(target);
     targetElement.empty();
-        articles.forEach(function (article) {
-            let container = $("<div>")
-                .addClass("card sticky-action");
-            let imageDiv = $("<div>")
-                .addClass("card-image");
-            let image = $("<img>")
-                .attr("src", article.urlToImage);
-            let iconLink = $("<a>")
-                .attr("id", "article-like-button")
-                .addClass("halfway-fab btn-floating green pulse");
-            let icon = $("<i>")
-                .addClass("material-icons")
-                .html("check");
-            let cardContentDiv = $("<div>")
-                .addClass("card-content")
-            let artistSpan = $("<span>")
-                .addClass("card-title")
-                .html(article.title);
-            let detailsIconSpan = $("<span>")
-                .addClass("card-title activator grey-text text-darken-4")
-                .html("Details");
-            let detailsIcon = $("<i>")
-                .addClass("material-icons right")
-                .html("more_vert");
-            let locationSpan = $("<span>")
-                .attr("id", "author")
-                .html(article.author);
-            let dateSpan = $("<span>")
-                .attr("id", "date")
-            let cardActionDiv = $("<div>")
-                .addClass("card-action")
-            let ticketsLink = $("<a>")
-                .attr("href", article.url)
-                .attr("target", "_blank")
-                .html("View Article");
-            let cardRevealDiv = $("<div>")
-                .addClass("card-reveal");
-            let cardRevealSpan = $("<span>")
-                .addClass("card-title grey-text text-darken-4")
-                .html(article.title);
-            let closeIcon = $("<i>")
-                .addClass("material-icons right")
-                .html("close");
-            
-            container.append(
-                imageDiv.append(
-                    image, iconLink.append(icon)
-                ),
-                cardContentDiv.append(
-                    artistSpan, detailsIconSpan.append(detailsIcon), locationSpan, dateSpan
-                ),
-                cardActionDiv.append(ticketsLink),
-                cardRevealDiv.append(
-                    [cardRevealSpan.append(closeIcon), article.description]
-                )
-            );
-    
-            targetElement.append(container);
-        });
+    articles.forEach(function (article) {
+        let container = $("<div>")
+            .addClass("card sticky-action");
+        let imageDiv = $("<div>")
+            .addClass("card-image");
+        let image = $("<img>")
+            .attr("src", article.urlToImage);
+        let iconLink = $("<a>")
+            .attr("id", "article-like-button")
+            .addClass("halfway-fab btn-floating green pulse");
+        let icon = $("<i>")
+            .addClass("material-icons")
+            .attr("id", "check-icon")
+            .attr("data", "done")
+            .attr("data-alt", "done_all")
+            .html("done");
+        let cardContentDiv = $("<div>")
+            .addClass("card-content")
+        let artistSpan = $("<span>")
+            .addClass("card-title")
+            .html(article.title);
+        let detailsIconSpan = $("<span>")
+            .addClass("card-title activator grey-text text-darken-4")
+            .html("Details");
+        let detailsIcon = $("<i>")
+            .addClass("material-icons right")
+            .html("more_vert");
+        let locationSpan = $("<span>")
+            .attr("id", "author")
+            .html(article.author);
+        let dateSpan = $("<span>")
+            .attr("id", "date")
+        let cardActionDiv = $("<div>")
+            .addClass("card-action")
+        let ticketsLink = $("<a>")
+            .attr("href", article.url)
+            .attr("target", "_blank")
+            .html("View Article");
+        let cardRevealDiv = $("<div>")
+            .addClass("card-reveal");
+        let cardRevealSpan = $("<span>")
+            .addClass("card-title grey-text text-darken-4")
+            .html(article.title);
+        let closeIcon = $("<i>")
+            .addClass("material-icons right")
+            .html("close");
+
+        container.append(
+            imageDiv.append(
+                image, iconLink.append(icon)
+            ),
+            cardContentDiv.append(
+                artistSpan, detailsIconSpan.append(detailsIcon), locationSpan, dateSpan
+            ),
+            cardActionDiv.append(ticketsLink),
+            cardRevealDiv.append(
+                [cardRevealSpan.append(closeIcon), article.description]
+            )
+        );
+
+        targetElement.append(container);
+    });
 }
