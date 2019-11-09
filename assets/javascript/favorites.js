@@ -47,16 +47,39 @@ function toggleTrendingLike(element) {
 //event favorites array 
 //for loop that displays contents of look in carousel card 
 //check for repeats in cards??
-// var eventFavorites = JSON.parse(localStorage.getItem("eventFavorites"))
+var eventFavorites = JSON.parse(localStorage.getItem("eventFavorites"))
 
 // if (!eventFavorites) {
+if (!eventFavorites) {
+    var favoriteEventsText = $("<h3>");
+    favoriteEventsText.html("You don't have any items saved.");
+    $("#favorite-events").append(favoriteEventsText);
+    eventFavorites = [];
+}
+console.log(eventFavorites)
+var savedEvents = [];
+for (var i = 0; i < savedEvents.length; i++) {
+    savedEvents.push(eventFavorites[i])
+}
 //     eventFavorites = [];
 // }
 $(document).on("click", "#event-like-button", function (event) {
     event.preventDefault();
     console.log($(this).children()[0]);
     console.log($(this).data("id"));
-    toggleEventLike($(this).children()[0]);
+
+
+    if (savedEvents.includes($(this).data("id"))) {
+
+    }
+    else {
+        eventFavorites.push($(this).data("id").toString())
+        savedEvents.push($(this).data("id"))
+        localStorage.setItem("eventFavorites", JSON.stringify(eventFavorites))
+        createSavedEventCards();
+        toggleEventLike($(this).children()[0]);
+    }
+
 
     //var cartoonFormatted = $("#cartoon-input").val().toString().replace(/ /g, "+");
     // var eventFave = $(this).data("id");
@@ -75,6 +98,11 @@ $(document).on("click", "#event-like-button", function (event) {
     // }
 
 })
+function createSavedEventCards() {
+
+}
+
+
 
 $(document).on("click", "#like-button", function (event) {
     event.preventDefault();
