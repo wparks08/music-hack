@@ -92,6 +92,22 @@ function searchByKeywordAndCity(keyword, city, target) {
 //onclick function to push data information into upcoming events cards
 $("#hack-it").on("click", function (event) {
     event.preventDefault();
+
+    $("#search-form").validate({
+        rules: {
+            artistSearch: {
+                required: "#locationSearch:blank"
+            },
+            locationSearch: {
+                required: "#artistSearch:blank"
+            }
+        }
+    });
+
+    if (!($("#search-form").valid())) {
+        return;
+    }
+
     console.log("this kind of works")
     $("#card-row-container").empty();
     var valueArtist = $("#artistSearch").val().trim();
@@ -212,7 +228,6 @@ function getEventProperties(event) {
         onSaleDate: getOnSaleDate(event)
     }
 
-    console.log(properties);
     return properties
 }
 

@@ -108,7 +108,7 @@
     </div>
 
     <!-- Search Form -->
-    <form>
+    <form id="search-form">
     <div id="search" class="section section-search purple darken-1 white-text center scrollspy">
         <div class="container">
             <div class="row">
@@ -117,14 +117,14 @@
                     <h3>Search Artist</h3>
                     <div class="input-field">
                         <i class="material-icons"> music_note</i>
-                        <input id="artistSearch" type="text" class="white grey-text">
+                        <input id="artistSearch" name="artistSearch" type="text" class="white grey-text">
                     </div>
                 </div>
                 <div class="col s6">
                     <h3>Search Location</h3>
                     <div class="input-field location">
                         <i class="material-icons"> add_location </i>
-                        <input id="locationSearch" type="text" class="white grey-text">
+                        <input id="locationSearch" name="locationSearch" type="text" class="white grey-text">
                     </div>
                 </div>
             </div>
@@ -363,6 +363,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js">
     </script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
     <script src="assets/javascript/materialize.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/places.js@1.17.0"></script>
     <script src="assets/javascript/news-api.js"></script>
