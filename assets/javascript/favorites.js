@@ -2,30 +2,25 @@ eventFavorites = [];
 
 
 function toggleEventLike(element) {
-    if (eventFavorites.includes(element.data("id"))) {
-        fillFavoriteStar(element);
-    } else {
-        outlineFavoriteStar(element);
+    var iconInfo = $(element).attr("data")
+
+    $(element).attr("data", $(element).attr("data-alt"))
+    $(element).attr("data-alt", iconInfo)
+
+
+
+    var icon = document.getElementById("favorite-icon");
+    if (icon.innerHTML === "favorite") {
+        icon.innerHTML = "favorite_border";
     }
+    else {
+        icon.innerHTML = "favorite";
+    }
+
 }
 
-function fillEventLike(element) {
-    element.empty();
-    element.append(
-        $("<i>")
-            .addClass("material-icons")
-            .text("favorite_border")
-    );
-}
 
-function outlineEventLike(element) {
-    element.empty();
-    element.append(
-        $("<i>")
-            .addClass("material-icons")
-            .text("favorite")
-    );
-}
+
 
 
 
@@ -36,28 +31,32 @@ function outlineEventLike(element) {
 //event favorites array 
 //for loop that displays contents of look in carousel card 
 //check for repeats in cards??
-var eventFavorites = JSON.parse(localStorage.getItem("eventFavorites"))
+// var eventFavorites = JSON.parse(localStorage.getItem("eventFavorites"))
 
-if (!eventFavorites) {
-    eventFavorites = [];
-}
+// if (!eventFavorites) {
+//     eventFavorites = [];
+// }
 $(document).on("click", "#event-like-button", function () {
-    console.log($(this).data("id"));
     event.preventDefault();
+    console.log($(this).children()[0]);
+    console.log($(this).data("id"));
+    toggleEventLike($(this).children()[0]);
+
     //var cartoonFormatted = $("#cartoon-input").val().toString().replace(/ /g, "+");
-    var eventFave = $(this).data("id");
+    // var eventFave = $(this).data("id");
 
-    if (eventFave.indexOf(eventFavorites) === -1) {
-        console.log("button works")
+    // if (eventFave.indexOf(eventFavorites) === -1) {
+    //     console.log("button works")
 
-        console.log(eventFave);
+    //     console.log(eventFave);
+    //     toggleEventLike();
 
-        eventFavorites.push(eventFave.toString());
-        localStorage.setItem("eventFavorites", JSON.stringify(eventFavorites));
-    }
-    else {
+    //     eventFavorites.push(eventFave.toString());
+    //     localStorage.setItem("eventFavorites", JSON.stringify(eventFavorites));
+    // }
+    // else {
 
-    }
+    // }
 
 })
 
