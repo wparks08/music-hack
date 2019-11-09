@@ -163,7 +163,8 @@ function displayResult(result, target) {
         let cardActionDiv = $("<div>")
             .addClass("card-action")
         let ticketsLink = $("<a>")
-            .attr("href", "#")
+            .attr("href", properties.eventUrl)
+            .attr("target", "_blank")
             .html("Buy Tickets");
         let cardRevealDiv = $("<div>")
             .addClass("card-reveal");
@@ -174,6 +175,7 @@ function displayResult(result, target) {
             .addClass("material-icons right")
             .html("close");
 
+            let eventDetails = 
         container.append(
             imageDiv.append(
                 image, iconLink.append(icon)
@@ -183,7 +185,7 @@ function displayResult(result, target) {
             ),
             cardActionDiv.append(ticketsLink),
             cardRevealDiv.append(
-                cardRevealSpan.append(closeIcon)
+                [cardRevealSpan.append(closeIcon), ]
             )
         );
 
@@ -199,7 +201,9 @@ function getEventProperties(event) {
         name: getName(event),
         imageUrl: getImageUrl(event),
         location: getLocation(event),
-        eventUrl: getEventUrl(event, this)
+        eventUrl: getEventUrl(event, this),
+        eventDate: getEventDate(event),
+        onSaleDate: getOnSaleDate(event)
     }
 
 
@@ -265,6 +269,21 @@ function getEventUrl(event) {
     } catch (error) {
         console.debug(error);
         return "#";
+    }
+}
+
+function getEventDate(event) {
+    try {
+        return event.dates.start.localDate;
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
+}
+
+function getOnSaleDate(event) {
+    try {
+        return 
     }
 }
 
