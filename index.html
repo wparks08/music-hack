@@ -7,24 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Hack</title>
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../project-1/assets/css/reset.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../project-1/assets/css/homepage.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/homepage.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link
       rel="stylesheet"
@@ -46,47 +32,71 @@
     />
   </head>
 
-  <body data-spy="scroll" data-target=".navbar">
-    <div id="Header">
-      <div class="navbar-fixed">
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
-          <div class="container">
-            <button
-              class="navbar-toggler"
-              data-toggle="collapse"
-              data-target="#Navbar"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <a href="#" class="navbar-brand"><h3>Music Hack</h3></a>
-            <div class="collapse navbar-collapse" id="#Navbar">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Search</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Upcoming Events</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Trending</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Merchendise</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Favourites</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Contacts</a>
-                </li>
-              </ul>
+
+</head>
+
+<body id="home" class="scrollspy">
+    <!--Navbar-->
+    <div>
+        <div class="navbar-fixed">
+        <nav class="purple">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo left-align"> Music Hack </a>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger">
+                        <i class="material-icons"> menu </i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a href="#home"> Home</a>
+                        </li>
+                        <li>
+                            <a href="#search"> Search </a>
+                        </li>
+                        <li>
+                            <a href="#upcoming-events">Upcoming Events </a>
+                        </li>
+                        <li>
+                            <a href="#trending">Trending </a>
+                        </li>
+                        <li>
+                            <a href="html-pages/merchandise.html"> Merchandise </a>
+                        </li>
+                        <li>
+                            <a href="html-pages/favorites.html"> Favorites </a>
+                        </li>
+                        <li>
+                            <a href="html-pages/contact.html"> Contact </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
           </div>
         </nav>
-      </div>
+    </div>
+        <ul class="sidenav" id="slide-out">
+            <li>
+                <a href="index.html"> Home</a>
+            </li>
+            <li>
+                <a href="#search"> Search </a>
+            </li>
+            <li>
+                <a href="#upcoming-events">Upcoming Events </a>
+            </li>
+            <li>
+                <a href="#trending">Trending </a>
+            </li>
+            <li>
+                <a href="html-pages/merchandise.html"> Merchandise </a>
+            </li>
+            <li>
+                <a href="html-pages/favorites.html"> Favorites </a>
+            </li>
+            <li>
+                <a href="html-pages/contact.html"> Contact </a>
+            </li>
+        </ul>
     </div>
 
     <!-- Slides Header -->
@@ -116,24 +126,31 @@
     </div>
 
     <!-- Search Form -->
-    <div
-      id="search"
-      class="section section-search purple darken-1 white-text center scrollspy"
-    >
-      <div class="container">
-        <div class="row">
-          <div class="col s6">
-            <h3>Search Artist</h3>
-            <div class="input-field">
-              <i class="material-icons"> music_note</i>
-              <input id="artistSearch" type="text" class="white grey-text" />
+    <form id="search-form">
+    <div id="search" class="section section-search purple darken-1 white-text center scrollspy">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col s6">
+                    <h3>Search Artist</h3>
+                    <div class="input-field">
+                        <i class="material-icons"> music_note</i>
+                        <input id="artistSearch" name="artistSearch" type="text" class="white grey-text">
+                    </div>
+                </div>
+                <div class="col s6">
+                    <h3>Search Location</h3>
+                    <div class="input-field location">
+                        <i class="material-icons"> add_location </i>
+                        <input id="locationSearch" name="locationSearch" type="text" class="white grey-text">
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col s6">
-            <h3>Search Location</h3>
-            <div class="input-field location">
-              <i class="material-icons"> add_location </i>
-              <input id="locationSearch" type="text" class="white grey-text" />
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-3">
+                    <button id="hack-it" type="submit" class="btn btn-block btn-lg btn-primary"> Hack It!
+                    </button>
+                </div>
             </div>
           </div>
         </div>
@@ -150,72 +167,84 @@
         </div>
       </div>
     </div>
+</form>
 
     <!-- Upcoming Events cards-->
-    <div id="popular upcoming-events" class="section section-popular scrollspy">
-      <h2>Upcoming Events</h2>
-      <div class="container">
-        <div id="card-row" class="row">
-          <div
-            id="card-row-container"
-            class="col s12 m4 d-flex justify-content-between"
-          >
-            <div class="card sticky-action">
-              <div class="card-image">
-                <img src="../project-1/assets/images/Concertimg1.jpg" />
-                <a
-                  href="#"
-                  id="event-like-button"
-                  class="halfway-fab btn-floating pink pulse"
-                >
-                  <i class="material-icons"> favorite </i>
-                </a>
-              </div>
-              <div class="card-content">
-                <span class="card-title"> Artist Name</span>
-                <span class="card-title activator grey-text text-darken-4"
-                  >Details<i class="material-icons right">more_vert</i></span
-                >
-                <span id="location"></span>
-                <span id="venue"></span>
-                <span id="date"></span>
-              </div>
-              <div class="card-action">
-                <a href="#"> Buy Tickets </a>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4"
-                  >Card Title<i class="material-icons right">close</i></span
-                >
-              </div>
-            </div>
-            <div class="card sticky-action">
-              <div class="card-image">
-                <img src="../project-1/assets/images/Concertimg1.jpg" />
-                <a
-                  id="favorite-button"
-                  class="halfway-fab btn-floating pink pulse"
-                >
-                  <i class="material-icons"> favorite </i>
-                </a>
-              </div>
-              <div class="card-content">
-                <span class="card-title"> Artist Name</span>
-                <span class="card-title activator grey-text text-darken-4"
-                  >Details<i class="material-icons right">more_vert</i></span
-                >
-                <span id="Location"></span>
-                <span id="date"></span>
-              </div>
-              <div class="card-action">
-                <a href="#"> Details </a>
-                <a href="#"> Buy Tickets </a>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4"
-                  >Card Title<i class="material-icons right">close</i></span
-                >
-              </div>
+    <div id="upcoming-events" class="section section-popular scrollspy">
+        <h2> Upcoming Events </h2>
+        <div class="container">
+            <div id="card-row" class="row">
+                <div id="card-row-container" class="col s12 m4 d-flex justify-content-between">
+                    <div class="card sticky-action">
+                        <div class="card-image">
+                            <img src="assets/images/Concertimg1.jpg">
+                            <a href="#" id="event-like-button" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons"> favorite </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Artist Name</span>
+                            <span class="card-title activator grey-text text-darken-4">Details<i
+                                    class="material-icons right">more_vert</i></span>
+                            <span id="location"></span>
+                            <span id="venue"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Buy Tickets </a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">close</i></span>
+                        </div>
+                    </div>
+                    <div class="card sticky-action">
+                        <div class="card-image">
+                            <img src="assets/images/Concertimg1.jpg">
+                            <a id="favorite-button" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons"> favorite </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Artist Name</span>
+                            <span class="card-title activator grey-text text-darken-4">Details<i
+                                    class="material-icons right">more_vert</i></span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                            <a href="#"> Buy Tickets </a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">close</i></span>
+                        </div>
+                    </div>
+                    <div class="card sticky-action">
+                        <div class="card-image">
+                            <img src="assets/images/Concertimg1.jpg">
+                            <a href="#" id="favorite-button" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons"> favorite </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Artist Name</span>
+                            <span class="card-title activator grey-text text-darken-4">Details<i
+                                    class="material-icons right">more_vert</i></span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                            <a href="#"> Buy Tickets </a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">close</i></span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="card sticky-action">
               <div class="card-image">
@@ -251,97 +280,78 @@
       </div>
     </div>
     <!-- Trending cards-->
-    <div id="popular trending" class="section section-popular scrollspy">
-      <h2>Trending</h2>
-      <div class="container">
-        <div id="card-row" class="row">
-          <div
-            id="trending-container"
-            class="col s12 m4 d-flex justify-content-between"
-          >
-            <div class="card sticky-action">
-              <div class="card-image">
-                <img src="../project-1/assets/images/Concertimg1.jpg" />
-                <a
-                  href="#"
-                  id="like-button"
-                  class="halfway-fab btn-floating green pulse"
-                >
-                  <i class="material-icons"> check </i>
-                </a>
-              </div>
-              <div class="card-content">
-                <span class="card-title"> Headline</span>
-                <span class="card-title activator grey-text text-darken-4"
-                  >Card Title<i class="material-icons right">more_vert</i></span
-                >
-                <span id="Location"></span>
-                <span id="date"></span>
-              </div>
-              <div class="card-action">
-                <a href="#"> Details </a>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4"
-                  >Card Title<i class="material-icons right">close</i></span
-                >
-              </div>
-            </div>
-            <div class="card sticky-action">
-              <div class="card-image">
-                <img src="../project-1/assets/images/Concertimg1.jpg" />
-                <a
-                  href="#"
-                  id="like-button"
-                  class="halfway-fab btn-floating green pulse"
-                >
-                  <i class="material-icons"> check </i>
-                </a>
-              </div>
-              <div class="card-content">
-                <span class="card-title"> Headline</span>
-                <span class="card-title activator grey-text text-darken-4"
-                  >Card Title<i class="material-icons right">more_vert</i></span
-                >
-                <span id="Location"></span>
-                <span id="date"></span>
-              </div>
-              <div class="card-action">
-                <a href="#"> Details </a>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4"
-                  >Card Title<i class="material-icons right">close</i></span
-                >
-              </div>
-            </div>
-            <div class="card sticky-action">
-              <div class="card-image">
-                <img src="../project-1/assets/images/Concertimg1.jpg" />
-                <a
-                  href="#"
-                  id="like-button"
-                  class="halfway-fab btn-floating green pulse"
-                >
-                  <i class="material-icons"> check </i>
-                </a>
-              </div>
-              <div class="card-content">
-                <span class="card-title"> Headline</span>
-                <span class="card-title activator grey-text text-darken-4"
-                  >Card Title<i class="material-icons right">more_vert</i></span
-                >
-                <span id="Location"></span>
-                <span id="date"></span>
-              </div>
-              <div class="card-action">
-                <a href="#"> Details </a>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4"
-                  >Card Title<i class="material-icons right">close</i></span
-                >
-              </div>
+    <div id="trending" class="section section-popular scrollspy">
+        <h2> Trending </h2>
+        <div class="container">
+            <div id="card-row" class="row">
+                <div id="trending-container" class="col s12 m4 d-flex justify-content-between">
+                    <div class="card sticky-action">
+                        <div class="card-image">
+                            <img src="assets/images/Concertimg1.jpg">
+                            <a href="#" id="like-button" class="halfway-fab btn-floating green pulse">
+                                <i id="check-icon" class="material-icons"> check </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Headline</span>
+                            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">more_vert</i></span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">close</i></span>
+                        </div>
+                    </div>
+                    <div class="card sticky-action">
+                        <div class="card-image">
+                            <img src="assets/images/Concertimg1.jpg">
+                            <a href="#" id="like-button" class="halfway-fab btn-floating green pulse">
+                                <i class="material-icons"> check </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Headline</span>
+                            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">more_vert</i></span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">close</i></span>
+                        </div>
+                    </div>
+                    <div class="card sticky-action">
+                        <div class="card-image">
+                            <img src="assets/images/Concertimg1.jpg">
+                            <a href="#" id="like-button" class="halfway-fab btn-floating green pulse">
+                                <i class="material-icons"> check </i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"> Headline</span>
+                            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">more_vert</i></span>
+                            <span id="Location"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#"> Details </a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">close</i></span>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
@@ -355,7 +365,7 @@
                 <div class="col s12 m4 d-flex justify-content-between">
                     <div class="card">
                         <div class="card-image">
-                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <img src="assets/images/Concertimg1.jpg">
                             <a href="#" id="shop-button" class="halfway-fab btn-floating blue pulse">
                                 <i class="material-icons"> add_shopping_cart </i>
                             </a>
@@ -372,7 +382,7 @@
                     </div>
                     <div class="card">
                         <div class="card-image">
-                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <img src="assets/images/Concertimg1.jpg">
                             <a href="#" id="shop-button" class="halfway-fab btn-floating blue pulse">
                                 <i class="material-icons"> add_shopping_cart </i>
                             </a>
@@ -389,7 +399,7 @@
                     </div>
                     <div class="card">
                         <div class="card-image">
-                            <img src="../project-1/assets/images/Concertimg1.jpg">
+                            <img src="assets/images/Concertimg1.jpg">
                             <a href="#" id="shop-button" class="halfway-fab btn-floating blue pulse">
                                 <i class="material-icons"> add_shopping_cart </i>
                             </a>
@@ -412,10 +422,17 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
     <script src="assets/javascript/materialize.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.17.0"></script>
     <script src="assets/javascript/news-api.js"></script>
     <script src="assets/javascript/tm-api.js"></script>
     <script src="assets/javascript/logic.js"></script>
-    <script src="../project-1/assets/javascript/favorites.js"></script>
-  </body>
+    <script src="assets/javascript/favorites.js"></script>
+    <script src="assets/javascript/autocomplete.js"></script>
+
+
+
+</body>
+
 </html>
