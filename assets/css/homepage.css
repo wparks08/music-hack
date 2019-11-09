@@ -32,5 +32,10 @@
   .card-text {
     font-size: 85%;
   }
+
+  .ap-suggestion {
+    color: black;
+    text-align: left;
+  }
   
  
