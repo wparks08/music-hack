@@ -92,6 +92,35 @@ function searchByKeywordAndCity(keyword, city, target) {
 //onclick function to push data information into upcoming events cards
 $("#hack-it").on("click", function (event) {
     event.preventDefault();
+
+    $("#search-form").validate({
+        rules: {
+            artistSearch: {
+                required: "#locationSearch:blank"
+            },
+            locationSearch: {
+                required: "#artistSearch:blank"
+            }
+        },
+        errorElement: 'span',
+        errorPlacement: function (error, element) {
+            var type = $(element).attr("type");
+            if (type === "radio") {
+                // custom placement
+                error.insertAfter(element).wrap('<li/>');
+            } else if (type === "checkbox") {
+                // custom placement
+                error.insertAfter(element).wrap('<li/>');
+            } else {
+                error.insertAfter(element).wrap('<div/>');
+        }
+    },
+    });
+
+    if (!($("#search-form").valid())) {
+        return;
+    }
+
     console.log("this kind of works")
     $("#card-row-container").empty();
     var valueArtist = $("#artistSearch").val().trim();
@@ -163,7 +192,8 @@ function displayResult(result, target) {
         let cardActionDiv = $("<div>")
             .addClass("card-action")
         let ticketsLink = $("<a>")
-            .attr("href", "#")
+            .attr("href", properties.eventUrl)
+            .attr("target", "_blank")
             .html("Buy Tickets");
         let cardRevealDiv = $("<div>")
             .addClass("card-reveal");
@@ -174,6 +204,13 @@ function displayResult(result, target) {
             .addClass("material-icons right")
             .html("close");
 
+            let eventDetails = $("<div>");
+            eventDetails.append([
+                $("<p>Event Date: " + properties.eventDate + "</p>"),
+                $("<p>Tickets On Sale: " + properties.onSaleDate + "</p>")
+            ])
+
+
         container.append(
             imageDiv.append(
                 image, iconLink.append(icon)
@@ -183,7 +220,7 @@ function displayResult(result, target) {
             ),
             cardActionDiv.append(ticketsLink),
             cardRevealDiv.append(
-                cardRevealSpan.append(closeIcon)
+                [cardRevealSpan.append(closeIcon), eventDetails]
             )
         );
 
@@ -199,9 +236,10 @@ function getEventProperties(event) {
         name: getName(event),
         imageUrl: getImageUrl(event),
         location: getLocation(event),
-        eventUrl: getEventUrl(event, this)
+        eventUrl: getEventUrl(event, this),
+        eventDate: getEventDate(event),
+        onSaleDate: getOnSaleDate(event)
     }
-
 
     return properties
 }
@@ -268,3 +306,23 @@ function getEventUrl(event) {
     }
 }
 
+function getEventDate(event) {
+    try {
+        let eventDate = new Date(event.dates.start.localDate);
+        return eventDate.toLocaleDateString();
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
+}
+
+function getOnSaleDate(event) {
+    try {
+        let onSaleDate = new Date(event.sales.public.startDateTime);
+
+        return onSaleDate.toLocaleDateString();
+    } catch (error) {
+        console.debug(error);
+        return "";
+    }
+}
