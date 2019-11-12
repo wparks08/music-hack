@@ -35,43 +35,65 @@ const auth = firebase.auth();
         // Privacy policy url.
         privacyPolicyUrl: '<your-privacy-policy-url>'
     };
+
     ui.start('#firebaseui-auth-container', uiConfig);
+
 })();
 
-$("#login").on("click", function () {
-    $('.modal').modal();
-})
+
 
 $("#account-yes").on("click", function () {
-    // uiConfig();
-})
+    window.location.replace("login.html");
+
+});
 
 $("#account-no").on("click", function () {
-})
-var mainApp = {};
-(function userOption() {
-    var uid = null;
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            // User is signed in.
-            uid = user.uid
-        }
-        else {
-            uid = null;
-        }
+    UIConfig();
+    ui.start('#firebaseui-auth-container', {
+        signInOptions: [
+            {
+                provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                requireDisplayName: true
+            }
+        ]
     });
 });
 
 
-(function createAccount() {
-    var email = $("#email");
-    var password = $("#password");
 
-    const promise = auth.createUserWithEmailAndPassword(email.val(), password.val())
-    promise.catch(e => alert(e.message));
-    alert("Signed Up!");
+
+$("#login").on("click", function () {
+    $('.modal').modal();
+});
+
+
+// var mainApp = {};
+// (function userOption() {
+//     var uid = null;
+//     firebase.auth().onAuthStateChanged(function (user) {
+//         if (user) {
+//             // User is signed in.
+//             uid = user.uid
+//         }
+//         else {
+//             uid = null;
+//         }
+//     });
+// });
+
+
+function createAccount() {
 
     var user = firebase.auth().currentUser;
+
+    //user can set a password
+    var newPassword = getASecureRandomPassword();
+
+    user.updatePassword(newPassword).then(function () {
+        // Update successful.
+    }).catch(function (error) {
+        // An error happened.
+    });
     var name, email, photoUrl, uid, emailVerified;
 
     if (user != null) {
@@ -85,27 +107,27 @@ var mainApp = {};
     }
 
 
-});
+};
 
-function signIn() {
-    var email = $("#email");
-    var password = $("#password");
+// function signIn() {
+//     var email = $("#email");
+//     var password = $("#password");
 
-    const promise = auth.signInWithEmailAndPassword(email.val(), password.val())
-    promise.catch(e => alert(e.message));
-    alert("Signed In: " + email.val());
-
-
-}
-function signOut() {
-
-    firebase.auth().signOut().then(function () {
-        // Sign-out successful.
-    }).catch(function (error) {
-        // An error happened.
-    });
-
-    console.log("sign out worked")
+//     const promise = auth.signInWithEmailAndPassword(email.val(), password.val())
+//     promise.catch(e => alert(e.message));
+//     alert("Signed In: " + email.val());
 
 
-}
+// }
+// function signOut() {
+
+//     firebase.auth().signOut().then(function () {
+//         // Sign-out successful.
+//     }).catch(function (error) {
+//         // An error happened.
+//     });
+
+//     console.log("sign out worked")
+
+
+// }

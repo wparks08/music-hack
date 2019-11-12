@@ -9,9 +9,7 @@ $(document).ready(function () {
         interval: 6000,
     });
 });
-$(document).ready(function () {
-    $('.modal').modal();
-});
+
 
 
 let slider = $(".slider");

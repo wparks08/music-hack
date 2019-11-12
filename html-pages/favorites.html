@@ -28,14 +28,11 @@
         <nav class="purple navbar-fixed">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo left-align"> Music Hack </a>
+                    <a href="../index.html" class="brand-logo left-align"> Music Hack </a>
                     <a href="#" data-target="slide-out" class="sidenav-trigger">
                         <i class="material-icons"> menu </i>
                     </a>
                     <ul class="right hide-on-med-and-down">
-                        <li>
-                            <a href="../index.html"> Home</a>
-                        </li>
                         <li>
                             <a href="../index.html#search"> Search </a>
                         </li>
@@ -53,6 +50,9 @@
                         </li>
                         <li>
                             <a href="contact.html"> Contact </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Account</a>
                         </li>
                     </ul>
                 </div>
@@ -80,7 +80,21 @@
             <li>
                 <a href="contact.html"> Contact </a>
             </li>
+            <li>
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Account</a>
+            </li>
         </ul>
+    </div>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Create an account?</h4>
+            <p>Sign in through your email to create an account where you can save your favorite artist concert events,
+                trending, and merchandise information. </p>
+        </div>
+        <div class="modal-footer">
+            <a id="account-yes" href="login.html" class="modal-close waves-effect waves-green btn-flat"> Yes </a>
+            <a id="account-no" href="../index.html" class="modal-close waves-effect waves-green btn-flat"> No </a>
+        </div>
     </div>
 
     <!-- Favorite events cards-->
