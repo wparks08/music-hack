@@ -34,14 +34,12 @@
             <nav class="purple">
                 <div class="container">
                     <div class="nav-wrapper">
-                        <a href="#" class="brand-logo left-align"> Music Hack </a>
+                        <a href="#home" class="brand-logo left-align"> Music Hack </a>
                         <a href="#" data-target="slide-out" class="sidenav-trigger">
                             <i class="material-icons"> menu </i>
                         </a>
                         <ul class="right hide-on-med-and-down">
-                            <li>
-                                <a href="#home"> Home</a>
-                            </li>
+
                             <li>
                                 <a href="#search"> Search </a>
                             </li>
@@ -59,6 +57,9 @@
                             </li>
                             <li>
                                 <a href="html-pages/contact.html"> Contact </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Account</a>
                             </li>
 
                         </ul>
@@ -87,6 +88,9 @@
             </li>
             <li>
                 <a href="html-pages/contact.html"> Contact </a>
+            </li>
+            <li>
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Account</a>
             </li>
 
         </ul>
@@ -146,6 +150,18 @@
             </div>
         </div>
     </form>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Do you have an account?</h4>
+            <p>Create an account with Music Hack to receive information tailored to your saved artists, events,
+                trending, and merchandise! </p>
+        </div>
+        <div class="modal-footer">
+            <a id="account-yes" href="login.html" class="modal-close waves-effect waves-green btn-flat"> Yes </a>
+            <a id="account-no" href="createAccount.html" class="modal-close waves-effect waves-green btn-flat"> No </a>
+        </div>
+    </div>
 
     <!-- Upcoming Events cards-->
     <div id="upcoming-events" class="section section-popular scrollspy">

@@ -1,7 +1,7 @@
 const auth = firebase.auth();
 
 
-(function UIConfig() {
+function UIConfig() {
 
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     var uiConfig = {
@@ -36,6 +36,78 @@ const auth = firebase.auth();
         privacyPolicyUrl: '<your-privacy-policy-url>'
     };
     ui.start('#firebaseui-auth-container', uiConfig);
-})();
+};
+
+$("#login").on("click", function () {
+    $('.modal').modal();
+})
+
+$("#account-yes").on("click", function () {
+    window.location.replace("login.html");
+    uiConfig();
+})
+
+$("#account-no").on("click", function () {
+    window.location.replace("createAccount.html")
+})
+var mainApp = {};
+(function userOption() {
+    var uid = null;
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            // User is signed in.
+            uid = user.uid
+        }
+        else {
+            uid = null;
+        }
+    });
+});
 
 
+(function createAccount() {
+    var email = $("#email");
+    var password = $("#password");
+
+    const promise = auth.createUserWithEmailAndPassword(email.val(), password.val())
+    promise.catch(e => alert(e.message));
+    alert("Signed Up!");
+
+    var user = firebase.auth().currentUser;
+    var name, email, photoUrl, uid, emailVerified;
+
+    if (user != null) {
+        name = user.displayName;
+        email = user.email;
+        photoUrl = user.photoURL;
+        emailVerified = user.emailVerified;
+        uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+        // this value to authenticate with your backend server, if
+        // you have one. Use User.getToken() instead.
+    }
+
+
+});
+
+function signIn() {
+    var email = $("#email");
+    var password = $("#password");
+
+    const promise = auth.signInWithEmailAndPassword(email.val(), password.val())
+    promise.catch(e => alert(e.message));
+    alert("Signed In: " + email.val());
+
+
+}
+function signOut() {
+
+    firebase.auth().signOut().then(function () {
+        // Sign-out successful.
+    }).catch(function (error) {
+        // An error happened.
+    });
+
+    console.log("sign out worked")
+
+
+}
