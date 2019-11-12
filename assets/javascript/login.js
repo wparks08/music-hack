@@ -1,7 +1,7 @@
 const auth = firebase.auth();
 
 
-function UIConfig() {
+(function UIConfig() {
 
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     var uiConfig = {
@@ -36,19 +36,17 @@ function UIConfig() {
         privacyPolicyUrl: '<your-privacy-policy-url>'
     };
     ui.start('#firebaseui-auth-container', uiConfig);
-};
+})();
 
 $("#login").on("click", function () {
     $('.modal').modal();
 })
 
 $("#account-yes").on("click", function () {
-    window.location.replace("login.html");
-    uiConfig();
+    // uiConfig();
 })
 
 $("#account-no").on("click", function () {
-    window.location.replace("createAccount.html")
 })
 var mainApp = {};
 (function userOption() {
