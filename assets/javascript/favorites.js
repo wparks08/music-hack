@@ -1,39 +1,39 @@
-// eventFavorites = [];
-// savedEvents = [];
+eventFavorites = [];
+savedEvents = [];
 
-// function toggleEventLike(element) {
-//     var eventIconInfo = $(element).attr("data")
+function toggleEventLike(element) {
+    var eventIconInfo = $(element).attr("data")
 
-//     $(element).attr("data", $(element).attr("data-alt"))
-//     $(element).attr("data-alt", eventIconInfo)
-
-
-
-//     var eventIcon = $(element).attr("id", "favorite-icon");
-//     if (eventIcon.html() === "favorite") {
-//         eventIcon.html("favorite_border");
-//     }
-//     else {
-//         eventIcon.html("favorite");
-//     }
-
-// }
-
-// function toggleTrendingLike(element) {
-//     var trendingIconInfo = $(element).attr("data")
-//     $(element).attr("data", $(element).attr("data-alt"))
-//     $(element).attr("data-alt", trendingIconInfo)
+    $(element).attr("data", $(element).attr("data-alt"))
+    $(element).attr("data-alt", eventIconInfo)
 
 
 
-//     var icon = $(element).attr("id", "check-icon");
-//     if (icon.html() === "done") {
-//         icon.html("done_all");
-//     }
-//     else {
-//         icon.html("done");
-//     }
-// }
+    var eventIcon = $(element).attr("id", "favorite-icon");
+    if (eventIcon.html() === "favorite") {
+        eventIcon.html("favorite_border");
+    }
+    else {
+        eventIcon.html("favorite");
+    }
+
+}
+
+function toggleTrendingLike(element) {
+    var trendingIconInfo = $(element).attr("data")
+    $(element).attr("data", $(element).attr("data-alt"))
+    $(element).attr("data-alt", trendingIconInfo)
+
+
+
+    var icon = $(element).attr("id", "check-icon");
+    if (icon.html() === "done") {
+        icon.html("done_all");
+    }
+    else {
+        icon.html("done");
+    }
+}
 
 
 

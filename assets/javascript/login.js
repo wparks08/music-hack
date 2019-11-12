@@ -1,4 +1,22 @@
 const auth = firebase.auth();
+//var app_firebase = {};
+// Your web app's Firebase configuration
+
+
+var firebaseConfig = {
+    apiKey: "AIzaSyAW_2dRcGBTlzxsDlHv9jIHJ3iCt0aE3ls",
+    authDomain: "musichack-f293f.firebaseapp.com",
+    databaseURL: "https://musichack-f293f.firebaseio.com",
+    projectId: "musichack-f293f",
+    storageBucket: "musichack-f293f.appspot.com",
+    messagingSenderId: "359518173568",
+    appId: "1:359518173568:web:f3e5d3f28817d094a12965"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var app_firebase = firebase.database();
+
 
 
 (function UIConfig() {
@@ -10,14 +28,36 @@ const auth = firebase.auth();
                 // User successfully signed in.
                 // Return type determines whether we continue the redirect automatically
                 // or whether we leave that to developer to handle.
-                return true;
-            },
-            uiShown: function () {
-                // The widget is rendered.
-                // Hide the loader.
-                document.getElementById('loader').style.display = 'none';
+                console.log(authResult)
+                console.log("name:", authResult.user.displayName)
+                console.log("email:", authResult.user.email)
+
+                // create the user in the db
+                var user = app_firebase.database().ref("user/" + JSON.stringify(email))
+                user.once("value").then(function (userinfo) {
+                    if (!userinfo) {
+                        userinfo = {
+
+                            name: authResult.user.displayName,
+                            email: authResult.user.email,
+                            fav: []
+                        }
+
+                        user.set(userinfo)
+                    }
+                })
             }
+
+
+            // return true;
         },
+        uiShown: function () {
+            // The widget is rendered.
+            // Hide the loader.
+            document.getElementById('loader').style.display = 'none';
+        },
+
+
         // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
         signInFlow: 'popup',
         signInSuccessUrl: 'index.html',
@@ -36,8 +76,7 @@ const auth = firebase.auth();
         privacyPolicyUrl: '<your-privacy-policy-url>'
     };
 
-    ui.start('#firebaseui-auth-container', uiConfig);
-
+    ui.start('#firebaseui-auth-container', uiConfig)
 })();
 
 
