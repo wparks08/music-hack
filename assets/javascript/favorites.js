@@ -1,5 +1,5 @@
 // eventFavorites = [];
-
+// savedEvents = [];
 
 // function toggleEventLike(element) {
 //     var eventIconInfo = $(element).attr("data")
@@ -56,11 +56,13 @@
 //     $("#favorite-events").append(favoriteEventsText);
 //     eventFavorites = [];
 // }
-// console.log(eventFavorites)
+// console.log("eventFavorites array:" + eventFavorites)
 // var savedEvents = [];
-// for (var i = 0; i < savedEvents.length; i++) {
+// for (var i = 0; i < eventFavorites.length; i++) {
 //     savedEvents.push(eventFavorites[i])
+
 // }
+// console.log("savedEvents array: " + savedEvents)
 // //     eventFavorites = [];
 // // }
 // $(document).on("click", "#event-like-button", function (event) {
@@ -70,38 +72,30 @@
 
 
 //     if (savedEvents.includes($(this).data("id"))) {
+//         //use a popup modal to display "wou've already saved this event"
+//         //popup modal should include option to remove saved item or not
+//         //if confirms removal{remove item from savedEvents[], eventFavorites[], and card display}
 
 //     }
 //     else {
-//         eventFavorites.push($(this).data("id").toString())
-//         savedEvents.push($(this).data("id"))
-//         localStorage.setItem("eventFavorites", JSON.stringify(eventFavorites))
-//         createSavedEventCards();
-//         toggleEventLike($(this).children()[0]);
+//         eventFavorites.push($(this).data("id"),
+//             savedEvents.push($(this).data("id")),
+//             localStorage.setItem("eventFavorites", JSON.stringify(eventFavorites)),
+//             // createSavedEventCards();
+//             toggleEventLike($(this).children()[0]))
 //     }
 
 
-//     //var cartoonFormatted = $("#cartoon-input").val().toString().replace(/ /g, "+");
-//     // var eventFave = $(this).data("id");
-
-//     // if (eventFave.indexOf(eventFavorites) === -1) {
-//     //     console.log("button works")
-
-//     //     console.log(eventFave);
-//     //     toggleEventLike();
-
-//     //     eventFavorites.push(eventFave.toString());
-//     //     localStorage.setItem("eventFavorites", JSON.stringify(eventFavorites));
-//     // }
-//     // else {
-
-//     // }
 
 // })
+
 // function createSavedEventCards() {
+//     console.log("this function works")
+//     $("#favorite-events").empty();
 //     for (var i = 0; i < eventFavorites.length; i++)
-//         getEventById(eventFavorites[i], "#favorite-events");
+//         getEventById(eventFavorites[i], "#favorite-events"); { return displayResult(result, "#favorite-events") };
 // }
+// createSavedEventCards();
 
 
 
@@ -113,4 +107,4 @@
 //     toggleTrendingLike($(this).children()[0]);
 // })
 
-// //onclick function that removes the card from eventFavorites array
+// // //onclick function that removes the card from eventFavorites array
