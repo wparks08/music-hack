@@ -25,7 +25,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var app_firebase = firebase;
+var app_firebase = firebase.database();
 
 const auth = firebase.auth();
 
@@ -64,6 +64,7 @@ const auth = firebase.auth();
                 // .then(function(){
                 //       //return true;
                 // });
+                window.location.replace("../index.html");
 
             },
             uiShown: function () {
