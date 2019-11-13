@@ -25,7 +25,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var app_firebase = firebase.database();
+var app_firebase = firebase;
 
 const auth = firebase.auth();
 
@@ -146,7 +146,6 @@ function createAccount() {
     if (user != null) {
         name = user.displayName;
         email = user.email;
-        photoUrl = user.photoURL;
         emailVerified = user.emailVerified;
         uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
         // this value to authenticate with your backend server, if
@@ -172,4 +171,4 @@ function createAccount() {
 //     });
 
 //     console.log("sign out worked")
-​//}
+
