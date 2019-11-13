@@ -32,6 +32,11 @@
     />
   </head>
 
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
 </head>
 
@@ -39,41 +44,42 @@
     <!--Navbar-->
     <div>
         <div class="navbar-fixed">
-        <nav class="purple">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a href="#" class="brand-logo left-align"> Music Hack </a>
-                    <a href="#" data-target="slide-out" class="sidenav-trigger">
-                        <i class="material-icons"> menu </i>
-                    </a>
-                    <ul class="right hide-on-med-and-down">
-                        <li>
-                            <a href="#home"> Home</a>
-                        </li>
-                        <li>
-                            <a href="#search"> Search </a>
-                        </li>
-                        <li>
-                            <a href="#upcoming-events">Upcoming Events </a>
-                        </li>
-                        <li>
-                            <a href="#trending">Trending </a>
-                        </li>
-                        <li>
-                            <a href="html-pages/merchandise.html"> Merchandise </a>
-                        </li>
-                        <li>
-                            <a href="html-pages/favorites.html"> Favorites </a>
-                        </li>
-                        <li>
-                            <a href="html-pages/contact.html"> Contact </a>
-                        </li>
-                    </ul>
+            <nav class="purple">
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a href="#home" class="brand-logo left-align"> Music Hack </a>
+                        <a href="#" data-target="slide-out" class="sidenav-trigger">
+                            <i class="material-icons"> menu </i>
+                        </a>
+                        <ul class="right hide-on-med-and-down">
+
+                            <li>
+                                <a href="#search"> Search </a>
+                            </li>
+                            <li>
+                                <a href="#upcoming-events">Upcoming Events </a>
+                            </li>
+                            <li>
+                                <a href="#trending">Trending </a>
+                            </li>
+                            <li>
+                                <a href="html-pages/merchandise.html"> Merchandise </a>
+                            </li>
+                            <li>
+                                <a href="html-pages/favorites.html"> Favorites </a>
+                            </li>
+                            <li>
+                                <a href="html-pages/contact.html"> Contact </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Account</a>
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
-            </div>
-          </div>
-        </nav>
-    </div>
+            </nav>
+        </div>
         <ul class="sidenav" id="slide-out">
             <li>
                 <a href="index.html"> Home</a>
@@ -96,6 +102,10 @@
             <li>
                 <a href="html-pages/contact.html"> Contact </a>
             </li>
+            <li>
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Account</a>
+            </li>
+
         </ul>
     </div>
 
@@ -127,37 +137,48 @@
 
     <!-- Search Form -->
     <form id="search-form">
-    <div id="search" class="section section-search purple darken-1 white-text center scrollspy">
-        <div class="container">
-            <div class="row">
-                
-                <div class="col s6">
-                    <h3>Search Artist</h3>
-                    <div class="input-field">
-                        <i class="material-icons"> music_note</i>
-                        <input id="artistSearch" name="artistSearch" type="text" class="white grey-text">
+        <div id="search" class="section section-search purple darken-1 white-text center scrollspy">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col s6">
+                        <h3>Search Artist</h3>
+                        <div class="input-field">
+                            <i class="material-icons"> music_note</i>
+                            <input id="artistSearch" name="artistSearch" type="text" class="white grey-text">
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <h3>Search Location</h3>
+                        <div class="input-field location">
+                            <i class="material-icons"> add_location </i>
+                            <input id="locationSearch" name="locationSearch" type="text" class="white grey-text">
+                        </div>
                     </div>
                 </div>
-                <div class="col s6">
-                    <h3>Search Location</h3>
-                    <div class="input-field location">
-                        <i class="material-icons"> add_location </i>
-                        <input id="locationSearch" name="locationSearch" type="text" class="white grey-text">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-3">
+                        <button id="hack-it" type="submit" class="btn btn-block btn-lg btn-primary"> Hack It!
+                        </button>
                     </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-3">
-                    <button id="hack-it" type="submit" class="btn btn-block btn-lg btn-primary"> Hack It!
-                    </button>
                 </div>
             </div>
           </div>
         </div>
-        
-      </div>
+    </form>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Create an account?</h4>
+            <p>Sign in through your email to create an account where you can save your favorite artist concert events,
+                trending, and merchandise information. </p>
+        </div>
+        <div class="modal-footer">
+            <a id="account-yes" href="../project-1/html-pages/login.html"
+                class="modal-close waves-effect waves-green btn-flat"> Yes </a>
+            <a id="account-no" href="#home" class="modal-close waves-effect waves-green btn-flat"> No </a>
+        </div>
     </div>
-</form>
 
     <!-- Upcoming Events cards-->
     <div id="upcoming-events" class="section section-popular scrollspy">
@@ -392,6 +413,8 @@
     <script src="assets/javascript/logic.js"></script>
     <script src="assets/javascript/favorites.js"></script>
     <script src="assets/javascript/autocomplete.js"></script>
+    <script src="assets/javascript/firebase.js"></script>
+    <script src="assets/javascript/login.js"></script>
 
 
 
